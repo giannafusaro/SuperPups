@@ -1,0 +1,25 @@
+<main>
+  <section class="banner">
+    <div id="banner"></div>
+    <div id="title-lines">
+      <h1 id="company-title">SUPER PUPS</h1>
+      <h2 class="company-tag">pet salon</h2>
+    </div>
+  </section>
+  <section class="about">
+    <h2>About Us</h2>
+    <p> some text about who we are! </p>
+  </section>
+  <section class="gallery">
+    <div class="gallery-container">
+      <div class="pic-container head">
+        <%= image_tag  "super-pups-logo-simplified.png", class: "logo" %>
+      </div>
+      <% (1..30).each do |i| %>
+        <div class="pic-container">
+          <%= image_tag  "gallery#{i}.jpg", class: "gallery-pic" %>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</main>
