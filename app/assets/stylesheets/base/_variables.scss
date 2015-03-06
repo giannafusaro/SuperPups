@@ -1,6 +1,99 @@
+@font-face {
+    font-family: 'aleolightitalic';
+    src: url('aleo-lightitalic-webfont-webfont.eot');
+    src: url('aleo-lightitalic-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo-lightitalic-webfont-webfont.woff2') format('woff2'),
+         url('aleo-lightitalic-webfont-webfont.woff') format('woff'),
+         url('aleo-lightitalic-webfont-webfont.ttf') format('truetype'),
+         url('aleo-lightitalic-webfont-webfont.svg#aleolightitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'aleolightitalic';
+    src: url('aleo-lightitalic-webfont-webfont.eot');
+    src: url('aleo-lightitalic-webfont-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo-lightitalic-webfont-webfont.woff2') format('woff2'),
+         url('aleo-lightitalic-webfont-webfont.woff') format('woff'),
+         url('aleo-lightitalic-webfont-webfont.ttf') format('truetype'),
+         url('aleo-lightitalic-webfont-webfont.svg#aleolightitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+@font-face {
+    font-family: 'aleolightitalic';
+    src: url('Aleo-LightItalic-webfont.eot');
+    src: url('Aleo-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Aleo-LightItalic-webfont.woff2') format('woff2'),
+         url('Aleo-LightItalic-webfont.woff') format('woff'),
+         url('Aleo-LightItalic-webfont.ttf') format('truetype'),
+         url('Aleo-LightItalic-webfont.svg#aleolightitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'aleolightitalic';
+    src: url('Aleo-LightItalic-webfont.eot');
+    src: url('Aleo-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Aleo-LightItalic-webfont.woff2') format('woff2'),
+         url('Aleo-LightItalic-webfont.woff') format('woff'),
+         url('Aleo-LightItalic-webfont.ttf') format('truetype'),
+         url('Aleo-LightItalic-webfont.svg#aleolightitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'flagship_slabbold';
+    src: url('Flagship Slab - Bold-webfont.eot');
+    src: url('Flagship Slab - Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Flagship Slab - Bold-webfont.woff2') format('woff2'),
+         url('Flagship Slab - Bold-webfont.woff') format('woff'),
+         url('Flagship Slab - Bold-webfont.ttf') format('truetype'),
+         url('Flagship Slab - Bold-webfont.svg#flagship_slabbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'flagship_slabregular';
+    src: url('Flagship Slab - Regular-webfont.eot');
+    src: url('Flagship Slab - Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('Flagship Slab - Regular-webfont.woff2') format('woff2'),
+         url('Flagship Slab - Regular-webfont.woff') format('woff'),
+         url('Flagship Slab - Regular-webfont.ttf') format('truetype'),
+         url('Flagship Slab - Regular-webfont.svg#flagship_slabregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'nexa_rust_extrasfree';
+    src: url('NexaRustExtras-Free-webfont.eot');
+    src: url('NexaRustExtras-Free-webfont.eot?#iefix') format('embedded-opentype'),
+         url('NexaRustExtras-Free-webfont.woff2') format('woff2'),
+         url('NexaRustExtras-Free-webfont.woff') format('woff'),
+         url('NexaRustExtras-Free-webfont.ttf') format('truetype'),
+         url('NexaRustExtras-Free-webfont.svg#nexa_rust_extrasfree') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
 // Typography
-$base-font-family: $helvetica;
-$heading-font-family: $base-font-family;
+$base-font-family: 'Spinnaker', sans-serif;
+$heading-font-family: 'Flagship Slab';
 
 // Font Sizes
 $base-font-size: 1em;
@@ -22,7 +115,10 @@ $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
+$light-blue: #42a0fa;
 $blue: #1C75BC;
+$dark-blue: #025cb3;
+$medium-blue: #0681f7;
 $yellow: #FFFC04;
 $pink: #FD046D;
 $orange: #FF9904;
@@ -34,7 +130,7 @@ $light-gray: #ddd;
 // Font Colors
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
-$action-color: $blue;
+$action-color: #fff;
 
 // Border
 $base-border-color: $light-gray;
