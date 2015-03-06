@@ -1,25 +1,63 @@
 <main>
-  <section class="banner">
-    <div id="banner"></div>
-    <div id="title-lines">
-      <h1 id="company-title">SUPER PUPS</h1>
-      <h2 class="company-tag">pet salon</h2>
+  <section id="splash">
+    <div class="nav-container">
+      <nav>
+        <%= image_tag  "super-pups-logo-simplified-1.png", class: "logo" %>
+        <ul class="side-nav">
+          <li><a>About</a></li>
+          <li><a>Gallery</a></li>
+          <li><a>Testimonials</a></li>
+          <li><a>Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="collage-container">
+      <%= image_tag  "collage-4.jpg", class: "collage" %>
     </div>
   </section>
+
   <section class="about">
     <h2>About Us</h2>
-    <p> some text about who we are! </p>
+    <p>
+      We are a family owned business with over 30 years expertise in the dog grooming business.
+      We guarantee our work 100%.
+      Susie specializes in Bichons and Poodles as well as Terriers.
+      Joel specializes in Terriers, Labradoodles, Goldendoodles, Goldens, Shihtuzs as well as many other breeds.
+      We understand your wishes that you want your dogs to leave our shop looking like the top dogs that they are.
+      We make that wish possible!
+      Your dogs are as important to us as they are to you. </p>
+
+    <p>
+      Our salon has a wonderful backyard where they can exercise and socialize with other dogs before they are groomed.
+      If you wish, they can also be in their kennel or on the ground in the salon.
+      We try to make their stay with us as pleasant and stress free as possible.
+      We take in to consideration the needs of puppies, older dogs and matted dogs.
+      We do the very best we can with what we are given to work with so that your dogs will have a positive
+      experience and want to return to our salon, Super Pups.</p>
+
+
+    <p>
+      Susie has groomed for over 30 years and was trained by Carolyn Smith, master groomer and dog judge.
+      She is very knowledgeble in animal health, nutrition, and skin issues.
+      Only the best organic products from New York ar used in our salon.
+      Joel was trained by Susie and has been grooming for 17 years.
+      He has saved the lives of dogs by identifying potential serious medical issues that their owners were not aware of.</p>
   </section>
-  <section class="gallery">
-    <div class="gallery-container">
-      <div class="pic-container head">
-        <%= image_tag  "super-pups-logo-simplified.png", class: "logo" %>
-      </div>
-      <% (1..30).each do |i| %>
-        <div class="pic-container">
-          <%= image_tag  "gallery#{i}.jpg", class: "gallery-pic" %>
-        </div>
-      <% end %>
+
+  <section class="banner">
+    <div id="banner">
+
+      <blockquote>
+        <i class="fa fa-quote-left pull-left"></i>
+        Joel and Suzie took our pup in like she was their own.
+        They genuinely love dogs and care about their wellbeing.
+        A lot of other groomers run their shop like a "business",
+        but Joel and Suzie put their hearts into it and it shows in their work.<i class="fa fa-quote-right pull-right"></i>
+      </blockquote>
+      <span>- Amy Y.</span>
     </div>
+  </section>
+  <section>
+    <div class="fb-like" data-share="true" data-width="450" data-show-faces="true"></div>
   </section>
 </main>
