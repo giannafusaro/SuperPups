@@ -7,28 +7,39 @@ $(document).ready ->
   $(window).scroll (e) ->
     parallax()
 
-  window.fbAsyncInit = ->
-    console.log("fbAsyncInit")
-    FB.init
-      appId: '1554821174799057'
-      xfbml: true
-      version: 'v2.2'
-    console.log("FB:", FB)
-    FB.api '/{122012001144458}/photos"', (response) ->
-      if response and !response.error
-        console.log 'Success! response:', response
-      console.log 'Error! response:', response
+  googleMap = do ->
+    myLatlng = new (google.maps.LatLng)(37.54575, -122.30755)
+    mapCenter = new (google.maps.LatLng)(37.549953, -122.3068106174469)
+    mapCanvas = document.getElementById('google-map')
+    mapOptions =
+      center: mapCenter
+      zoom: 13
+      scrollwheel: false
+      draggable: true
+      disableDefaultUI: true
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    map = new (google.maps.Map)(mapCanvas, mapOptions)
+    contentString = '<div id="content">' + '<div id="siteNotice">' + '</div>' + '<h1 id="firstHeading" class="firstHeading">Super Pups</h1>' + '<div id="bodyContent"' + '<p>2230 S El Camino Real</p>' + '</div>' + '<img src="assets/store-front-thumb.jpg"></img>' +'</div>'
+    infowindow = new (google.maps.InfoWindow)(
+      content: contentString
+      maxWidth: 300)
+    marker = new (google.maps.Marker)(
+      position: myLatlng
+      map: map
+      title: 'Super Pups')
+    { init: ->
+      map.set 'styles', [ {
+        featureType: 'landscape'
+        elementType: 'geometry'
+        stylers: [
+          { gamma: 1}
+          { hue: '#fffc04' }
+          { saturation: 40 }
+          { lightness: 50 }
+        ]
+      } ]
+      google.maps.event.addListener marker, 'click', ->
+        infowindow.open map, marker
+   }
 
-
-  ((d, s, id) ->
-    console.log("d,s,id")
-    js = undefined
-    fjs = d.getElementsByTagName(s)[0]
-    if d.getElementById(id)
-      return
-    js = d.createElement(s)
-    js.id = 1554821174799057
-    js.src = '//connect.facebook.net/en_US/sdk.js'
-    fjs.parentNode.insertBefore js, fjs
-    console.log("fjs", fjs)
-  ) document, 'script', 'facebook-jssdk'
+  googleMap.init()
