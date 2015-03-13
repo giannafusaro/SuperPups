@@ -214,3 +214,63 @@ img.icon {
   font-size: 1em;
   margin: 0;
 }
+
+/////////////////////////////////////////////////////////////////////////////////
+// New site jumbo
+/////////////////////////////////////////////////////////////////////////////////
+
+#jumbotron {
+  position: relative;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  height: 600px;
+  background-image: url(asset_path('collage-4.jpg'));
+  background-size: auto 100%;
+  &:before {
+    content: '';
+    @include position(absolute, 0px 0px 0px 0px);
+    @include radial-gradient(rgba($light-blue, 0.3), rgba($dark-blue,0.9));
+  }
+
+  .jumbotron-content {
+    position: relative;
+    img {
+      width: 200px;
+    }
+
+    h1, h2 {
+      margin: 0;
+      color: #fff;
+    }
+
+    h1 {
+      font-family: 'flagship_slabbold';
+      font-size: 7em;
+    }
+
+    h2 {
+      font-family: 'flagship_slabregular';
+    }
+  }
+}
+
+#dog-collar {
+  height: 110px;
+  text-align: center;
+  background-color: #6A401A;
+  background-image: url(http://www.transparenttextures.com/patterns/leather.png);
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+  border-top: 2px dashed rgba(0,0,0,0.75);
+  border-bottom: 2px dashed rgba(0,0,0,0.75);
+  box-shadow: 0 0 0 4px #ff0030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+
+  .collar-logo {
+    position: absolute;
+    img {
+      width: 200px;
+    }
+  }
+
+}
