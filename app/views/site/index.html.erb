@@ -5,51 +5,68 @@
       <h2>San Mateo's Premier Pet Salon</h2>
     </div>
   </section>
-  <!-- <div id="dog-collar">
-    <div class="collar-logo"><%= image_tag "super-pups-circle-logo.png" %></div>
-  </div> -->
 
-  <!-- <section id="splash">
-    <div class="nav-container">
-      <nav>
-        <%= image_tag  "super-pups-logo-simplified-1.png", class: "logo" %>
-        <ul class="side-nav">
-          <li><a>About</a></li>
-          <li><a>Gallery</a></li>
-          <li><a>Testimonials</a></li>
-          <li><a>Contact</a></li>
-        </ul>
-      </nav>
+  <div class="collar">
+    <div class="collar-stitching">
+      <div class="collar-logo"><%= image_tag "super-pups-circle-logo.png" %></div>
     </div>
-    <div id="collage-container">
-      <%= image_tag  "collage-4.jpg", class: "collage" %>
-    </div>
-  </section> -->
+  </div>
 
-  <section class="about">
+  <section id="about">
     <h2>About Us</h2>
     <div class="container">
-      <p>
-        We are a family owned business with over 30 years expertise in the dog grooming business.
-        We guarantee our work 100%.
-        Susie specializes in Bichons and Poodles as well as Terriers.
-        Joel specializes in Terriers, Labradoodles, Goldendoodles, Goldens, Shihtuzs as well as many other breeds.
-        We understand your wishes that you want your dogs to leave our shop looking like the top dogs that they are.
-        We make that wish possible!
-        Your dogs are as important to us as they are to you. </p>
-      <p>
-        Our salon has a wonderful backyard where they can exercise and socialize with other dogs before they are groomed.
-        If you wish, they can also be in their kennel or on the ground in the salon.
-        We try to make their stay with us as pleasant and stress free as possible.
-        We take in to consideration the needs of puppies, older dogs and matted dogs.
-        We do the very best we can with what we are given to work with so that your dogs will have a positive
-        experience and want to return to our salon, Super Pups.</p>
-      <p>
-        Susie has groomed for over 30 years and was trained by Carolyn Smith, master groomer and dog judge.
-        She is very knowledgeble in animal health, nutrition, and skin issues.
-        Only the best organic products from New York ar used in our salon.
-        Joel was trained by Susie and has been grooming for 17 years.
-        He has saved the lives of dogs by identifying potential serious medical issues that their owners were not aware of.</p>
+
+      <%
+        about_data = [
+          {
+            text: 'We are a family owned business with over 30 years expertise in the dog grooming business.
+                   We guarantee our work 100%. Susie specializes in Bichons and Poodles as well as Terriers.
+                   Joel specializes in Terriers, Labradoodles, Goldendoodles, Goldens, Shihtuzs as well as many other breeds.
+                   We understand your wishes that you want your dogs to leave our shop looking like the top dogs that they are.
+                   We make that wish possible! Your dogs are as important to us as they are to you.',
+            photo_filename: 'about/storefront.jpg',
+            photo_caption: 'Our Storefront',
+            photo_alignment: 'right'
+          },
+          {
+            text: 'Our salon has a wonderful backyard where they can exercise and socialize with other dogs before they are groomed.
+                   If you wish, they can also be in their kennel or on the ground in the salon.
+                   We try to make their stay with us as pleasant and stress free as possible.
+                   We take in to consideration the needs of puppies, older dogs and matted dogs.
+                   We do the very best we can with what we are given to work with so that your dogs will have a positive
+                   experience and want to return to our salon, Super Pups.',
+            photo_filename: 'about/dogs-yard.jpg',
+            photo_caption: 'Doggie Playground',
+            photo_alignment: 'left'
+          },
+          {
+            text: 'Susie has groomed for over 30 years and was trained by Carolyn Smith, master groomer and dog judge.
+                   She is very knowledgeble in animal health, nutrition, and skin issues.
+                   Only the best organic products from New York ar used in our salon.
+                   Joel was trained by Susie and has been grooming for 17 years.
+                   He has saved the lives of dogs by identifying potential serious medical issues that their owners were not aware of.',
+            photo_filename: 'about/joel-and-susie.jpg',
+            photo_caption: 'Joel & Susie',
+            photo_alignment: 'right'
+          }
+        ]
+      %>
+
+      <% about_data.each do |data| %>
+        <div class="paragraph photo-align-<%= data[:photo_alignment] %>">
+          <aside class="polaroid">
+            <div class="polaroid-image">
+              <%= image_tag data[:photo_filename] %>
+            </div>
+            <span class="polaroid-caption">
+              <%= data[:photo_caption] %>
+            </span>
+          </aside>
+          <p>
+            <%= data[:text] %>
+          </p>
+        </div>
+      <% end %>
     </div>
   </section>
 

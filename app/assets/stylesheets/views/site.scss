@@ -255,22 +255,111 @@ img.icon {
   }
 }
 
-#dog-collar {
+.collar {
+  position: relative;
   height: 110px;
   text-align: center;
-  background-color: #6A401A;
-  background-image: url(http://www.transparenttextures.com/patterns/leather.png);
+  background-color: #9d581b;
+  background-image: url(http://www.transparenttextures.com/patterns/dark-leather.png);
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  border-top: 10px solid rgba(0,0,0,0.25);
+  border-bottom: 10px solid rgba(0,0,0,0.25);
+  box-shadow: 0px 3px 20px 2px rgba(0,0,0,0.5);
 
-  border-top: 2px dashed rgba(0,0,0,0.75);
-  border-bottom: 2px dashed rgba(0,0,0,0.75);
-  box-shadow: 0 0 0 4px #ff0030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+  .collar-stitching {
+    @include position(absolute, 10% 0px);
+    border-top: 2px dashed rgba(255,255,255, 0.4);
+    border-bottom: 2px dashed rgba(255,255,255, 0.4);
+  }
 
   .collar-logo {
-    position: absolute;
+    @include position(absolute, 0px 0px 0px 0px);
+    margin-top: -5%;
     img {
       width: 200px;
     }
   }
 
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+// About Section
+/////////////////////////////////////////////////////////////////////////////////
+
+#about {
+  h2 {
+    font-family: 'flagship_slabbold';
+    text-shadow: 1px 1px 0px #fff;
+  }
+
+  .paragraph {
+    @include clearfix;
+    font-size: 1.25em;
+    line-height: 1.95em;
+    letter-spacing: 0.025em;
+    text-shadow: 1px 1px 0px #fff;
+
+    &.photo-align-left {
+      .polaroid {
+        float: left;
+        margin: 2em 2em 1em -2em;
+        @include transform(rotate(-6deg));
+        box-shadow: -6px 6px 30px 3px rgba(0, 0, 0, 0.5);
+      }
+      p {
+        text-align: right;
+      }
+    }
+
+    &.photo-align-right {
+      .polaroid {
+        float: right;
+        margin: 2em -2em 1em 2em;
+        @include transform(rotate(6deg));
+        box-shadow: 6px 6px 30px 3px rgba(0, 0, 0, 0.5);
+      }
+      p {
+        text-align: left;
+      }
+    }
+
+    &:first-of-type .polaroid {
+      margin-top: 1em;
+    }
+
+    &:last-of-type .polaroid {
+      margin-top: 1em;
+    }
+  }
+
+  .polaroid {
+    margin: 20px;
+    padding: 20px 20px 50px 20px;
+    width: 400px; height: 350px;
+    background-color: #ffffff;
+    background-image: url(http://www.transparenttextures.com/patterns/natural-paper.png);
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
+    .polaroid-image {
+      margin: 0;
+      width: 100%; height: 265px;
+      overflow: hidden;
+      box-shadow: inset 0px 0px 60px 10px rgba(#022038,0.75);
+      img {
+        position: relative;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -1;
+      }
+    }
+
+    .polaroid-caption {
+      font-family: 'Indie Flower', cursive;
+      text-shadow: none;
+      font-size: 1.4em;
+      line-height: 2.2em;
+      letter-spacing: 0.18em;
+      font-weight: bold;
+    }
+  }
 }
