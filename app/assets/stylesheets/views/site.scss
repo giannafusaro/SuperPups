@@ -89,39 +89,6 @@ nav {
 .logo {
   width: 70%;
 }
-
-///////////////////////////
-///// parallax banner ////
-/////////////////////////
-.banner blockquote {
-  font-family: 'aleolightitalic';
-  font-size: 1.75em;
-  color: #fff;
-  position: relative;
-  float: left;
-  width: 50%;
-}
-.banner span {
-  color: #fff;
-  font-size: 1.5em;
-}
-.banner {
-  height: 500px;
-  overflow-y: hidden;
-}
-#banner {
-  width: 100%;
-  top:0;
-  left:0;
-  z-index: -1;
-  height: 400px;
-  background: url("three-bichons-vintage.jpg") no-repeat fixed;
-  background-size: 100% auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-}
-
 ///////////////////////////
 //// gallery ////////
 /////////////////////////
@@ -260,8 +227,7 @@ img.icon {
   height: 110px;
   text-align: center;
   background-color: #9d581b;
-  background-image: url(http://www.transparenttextures.com/patterns/dark-leather.png);
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-image: url(asset_path('textures/dark-leather.png'));
   border-top: 10px solid rgba(0,0,0,0.25);
   border-bottom: 10px solid rgba(0,0,0,0.25);
   box-shadow: 0px 3px 20px 2px rgba(0,0,0,0.5);
@@ -337,8 +303,7 @@ img.icon {
     padding: 20px 20px 50px 20px;
     width: 400px; height: 350px;
     background-color: #ffffff;
-    background-image: url(http://www.transparenttextures.com/patterns/natural-paper.png);
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-image: url(asset_path('textures/natural-paper.png'));
 
     .polaroid-image {
       margin: 0;
@@ -362,4 +327,67 @@ img.icon {
       font-weight: bold;
     }
   }
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+// About Section
+/////////////////////////////////////////////////////////////////////////////////
+
+//
+// #featured-testimonial {
+//   perspective: 1px;
+//   height: 50vh;
+//   overflow-x: hidden;
+//   overflow-y: auto;
+//   border: 1px solid #00ff00;
+//
+//   .featured-testimonial-background {
+//     @include position(absolute, 0px 0px 0px 0px);
+//     transform: translateZ(-1px);
+//     background: url("three-bichons-vintage.jpg") repeat;
+//     background-position: top;
+//     background-size: cover;
+//     background-color: #022038;
+//   }
+//   .featured-testimonial-content {
+//     @include position(absolute, 0px 0px 0px 0px);
+//     transform: translateZ(0);
+//   }
+// }
+
+$parallax-height: 400px;
+
+#featured-testimonial {
+  position: relative;
+  @include display(flex);
+  @include align-items(center);
+  width: 100%; height: 400px;
+  overflow: hidden;
+  @include transform(translate3d(0px, 0px 0px));
+
+  .featured-testimonial-content {
+    position: relative;
+    z-index: 9;
+    float: left;
+    width: 50%;
+    blockquote {
+      position: relative;
+      width: 100%;
+      font-family: 'aleolightitalic';
+      font-size: 1.75em;
+      color: #fff;
+    }
+    span {
+      color: #fff;
+      font-size: 1.5em;
+    }
+  }
+}
+
+#featured-testimonial-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 800px;
+
+  background: #022038 url(asset_path("background/1440x800-three-bichons-vintage.jpg")) 50% 50% no-repeat;
 }
