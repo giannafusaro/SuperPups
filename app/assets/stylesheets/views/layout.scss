@@ -33,8 +33,8 @@ footer {
   position: relative;
   @include display(flex);
   @include justify-content(center);
-  @include align-items(center);
-  height: 500px;
+  @include align-items(flex-end);
+  height: 400px;
   background-image: url(asset_path('collage-4.jpg'));
   background-size: auto 100%;
   &:before {
@@ -82,6 +82,10 @@ footer {
     p {
       text-align: center;
       color: rgba(255,255,255,0.8);
+      &:first-of-type {
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
     }
 
     .gianna-codes {
