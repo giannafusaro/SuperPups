@@ -1,0 +1,77 @@
+<%
+  featured_testimonial_data = {
+    reviewer_name: 'Amy Y.',
+    review: "Joel and Suzie took our pup in like she was their own. They genuinely love dogs and care about their wellbeing. A lot
+      of other groomers run their shop like a \"business\", but Joel and Suzie put their hearts into it and it shows in their work."
+  }
+%>
+
+<section id="featured-testimonial">
+  <div class="featured-testimonial-content">
+    <blockquote>
+      <i class="fa fa-quote-left pull-left"></i>
+      <%= featured_testimonial_data[:review] %>
+      <i class="fa fa-quote-right pull-right"></i>
+    </blockquote>
+    <span>- <%= featured_testimonial_data[:reviewer_name] %></span>
+  </div>
+  <div id="featured-testimonial-background"></div>
+</section>
+
+
+<%
+  testimonial_data = [
+    {
+      reviewer_name: 'David C.',
+      reviewer_photo_url: '//s3-media4.fl.yelpcdn.com/photo/5p__prskvL6VVKh6NoH3yA/60s.jpg',
+      review: "Simply put, there's no one better. Joel & Susie have always been so good to us and our dog, that we drive from Hayward for
+        grooming sessions. They bend over backwards to accommodate us and we couldn't be more thankful for them taking such great care of
+        Dexter."
+    },
+    {
+      reviewer_name: 'Howard H.',
+      reviewer_photo_url: '//s3-media4.fl.yelpcdn.com/photo/7-YlRDfswuUrJD9r1s2mbA/60s.jpg',
+      review: "Convenient location, easy to schedule appointments, flexible, friendly, and most importantly, beloved by our Poochy, Super
+        Pups is THE place to go if you want your canine to look like a super pup!"
+    },
+    {
+      reviewer_name: 'Mark P.',
+      reviewer_photo_url: '//s3-media3.fl.yelpcdn.com/photo/kScFr-jETeB2UlXZli8hZQ/60s.jpg',
+      review: "I've been coming here for close to two years now and have had nothing but great experiences. Joel and Susie are great and
+        our dog looks fantastic every time!"
+    },
+    {
+      reviewer_name: 'Amy C.',
+      reviewer_photo_url: '//s3-media1.fl.yelpcdn.com/photo/kyY-ErPO2DioZ9QWRQZmYw/60s.jpg',
+      review: "A quick update to thank Joel & Susie at Super Pups from the bottom of our hearts for finding our Francis' cancer 3+ years ago.
+      He's now outlived the expected lifespan following diagnosis and just today got another good report.
+      It might have been very different if Joel and Susie weren't so good at what they do and brought it to my attention!
+      Thank you, thank you, thank you!! I'm forever in your debt!"
+    },
+    {
+      reviewer_name: 'Claudia D.',
+      reviewer_photo_url: '//s3-media4.fl.yelpcdn.com/photo/_fL5CBzBHDUQSP9Gnjoa7w/60s.jpg',
+      review: "Love Super Pups very much. My doggies always looks amazing when I pick them up. Great groomers and always very
+        accommodating and friendly. Always a wonderful experience. Please give them a call!! They ROCK."
+    }
+  ]
+%>
+
+<section id="testimonials">
+  <h2>Testimonials</h2>
+  <div class="container">
+    <ul class="testimonials">
+      <% testimonial_data.each do |data| %>
+        <li>
+          <div class="reviewer">
+            <%= image_tag data[:reviewer_photo_url], class: 'reviewer-photo' %>
+            <span class="reviewer-name"><%= data[:reviewer_name] %></span>
+          </div>
+          <q>
+            <%= data[:review] %>
+          </q>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,61 @@
+#jumbotron {
+  position: relative;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  height: 600px;
+  background-image: url(asset_path('collage-4.jpg'));
+  background-size: auto 100%;
+  &:before {
+    content: '';
+    @include position(absolute, 0px 0px 0px 0px);
+    @include radial-gradient(rgba($light-blue, 0.3), rgba($dark-blue,0.9));
+  }
+
+  .jumbotron-content {
+    position: relative;
+    img {
+      width: 200px;
+    }
+
+    h1, h2 {
+      margin: 0;
+      color: #fff;
+    }
+
+    h1 {
+      font-family: 'flagship_slabbold';
+      font-size: 7em;
+    }
+
+    h2 {
+      font-family: 'flagship_slabregular';
+    }
+  }
+}
+
+.collar {
+  position: relative;
+  height: 110px;
+  text-align: center;
+  background-color: #9d581b;
+  background-image: url(asset_path('textures/dark-leather.png'));
+  border-top: 10px solid rgba(0,0,0,0.25);
+  border-bottom: 10px solid rgba(0,0,0,0.25);
+  box-shadow: 0px 3px 20px 2px rgba(0,0,0,0.5);
+
+  .collar-stitching {
+    @include position(absolute, 10% 0px);
+    border-top: 2px dashed rgba(255,255,255, 0.4);
+    border-bottom: 2px dashed rgba(255,255,255, 0.4);
+  }
+
+  .collar-logo {
+    @include position(absolute, 0px 0px 0px 0px);
+    margin-top: -5%;
+    img {
+      width: 200px;
+    }
+  }
+
+}

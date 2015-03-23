@@ -12,145 +12,38 @@
     </div>
   </div>
 
-  <section id="about">
-    <h2>About Us</h2>
-    <div class="container">
+  <%= render 'about' %>
 
-      <%
-        about_data = [
-          {
-            text: 'We are a family owned business with over 30 years expertise in the dog grooming business.
-                   We guarantee our work 100%. Susie specializes in Bichons and Poodles as well as Terriers.
-                   Joel specializes in Terriers, Labradoodles, Goldendoodles, Goldens, Shihtuzs as well as many other breeds.
-                   We understand your wishes that you want your dogs to leave our shop looking like the top dogs that they are.
-                   We make that wish possible! Your dogs are as important to us as they are to you.',
-            photo_filename: 'about/storefront.jpg',
-            photo_caption: 'Our Storefront',
-            photo_alignment: 'right'
-          },
-          {
-            text: 'Our salon has a wonderful backyard where they can exercise and socialize with other dogs before they are groomed.
-                   If you wish, they can also be in their kennel or on the ground in the salon.
-                   We try to make their stay with us as pleasant and stress free as possible.
-                   We take in to consideration the needs of puppies, older dogs and matted dogs.
-                   We do the very best we can with what we are given to work with so that your dogs will have a positive
-                   experience and want to return to our salon, Super Pups.',
-            photo_filename: 'about/dogs-yard.jpg',
-            photo_caption: 'Doggie Playground',
-            photo_alignment: 'left'
-          },
-          {
-            text: 'Susie has groomed for over 30 years and was trained by Carolyn Smith, master groomer and dog judge.
-                   She is very knowledgeble in animal health, nutrition, and skin issues.
-                   Only the best organic products from New York ar used in our salon.
-                   Joel was trained by Susie and has been grooming for 17 years.
-                   He has saved the lives of dogs by identifying potential serious medical issues that their owners were not aware of.',
-            photo_filename: 'about/joel-and-susie.jpg',
-            photo_caption: 'Joel & Susie',
-            photo_alignment: 'right'
-          }
-        ]
-      %>
+  <%= render 'testimonials' %>
 
-      <% about_data.each do |data| %>
-        <div class="paragraph photo-align-<%= data[:photo_alignment] %>">
-          <aside class="polaroid">
-            <div class="polaroid-image">
-              <%= image_tag data[:photo_filename] %>
-            </div>
-            <span class="polaroid-caption">
-              <%= data[:photo_caption] %>
-            </span>
-          </aside>
-          <p>
-            <%= data[:text] %>
-          </p>
-        </div>
-      <% end %>
-    </div>
-  </section>
+  <%= render 'contact' %>
 
-  <section id="featured-testimonial">
-    <div class="featured-testimonial-content">
-      <blockquote>
-        <i class="fa fa-quote-left pull-left"></i>
-        Joel and Suzie took our pup in like she was their own.
-        They genuinely love dogs and care about their wellbeing.
-        A lot of other groomers run their shop like a "business",
-        but Joel and Suzie put their hearts into it and it shows in their work.
-        <i class="fa fa-quote-right pull-right"></i>
-      </blockquote>
-      <span>- Amy Y.</span>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-logo">
     </div>
-    <div id="featured-testimonial-background"></div>
-  </section>
+    <div class="footer-links">
+      <ul>
+        <li><h3>Content</h3></li>
+        <li><a href="javascript:void(0)">About</a></li>
+        <li><a href="javascript:void(0)">Contact</a></li>
+        <li><a href="javascript:void(0)">Products</a></li>
+      </ul>
+      <ul>
+        <li><h3>Follow Us</h3></li>
+        <li><a href="javascript:void(0)">Facebook</a></li>
+        <li><a href="javascript:void(0)">Twitter</a></li>
+        <li><a href="javascript:void(0)">YouTube</a></li>
+      </ul>
+      <ul>
+        <li><h3>Legal</h3></li>
+        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+        <li><a href="javascript:void(0)">Privacy Policy</a></li>
+      </ul>
+    </div>
 
-  <section class="testimonials">
-    <h2>Testimonials</h2>
-    <div class="testimonial">
-      <div class="customer-info">
-        <%= image_tag  "//s3-media4.fl.yelpcdn.com/photo/5p__prskvL6VVKh6NoH3yA/60s.jpg", class: "customer-pic" %>
-        <div class="name">David C.</div>
-      </div>
-      <q>
-        Simply put, there's no one better.
-        Joel & Susie have always been so good to us and our dog, that we drive from Hayward for grooming sessions.
-        They bend over backwards to accommodate us and we couldn't be more thankful for them taking such great care of Dexter.
-      </q>
-    </div>
-    <div class="testimonial">
-      <q>
-        Convenient location, easy to schedule appointments, flexible, friendly, and most importantly,
-        beloved by our Poochy, Super Pups is THE place to go if you want your canine to look like a super pup!
-      </q>
-      <div class="customer-info">
-        <%= image_tag  "//s3-media4.fl.yelpcdn.com/photo/7-YlRDfswuUrJD9r1s2mbA/60s.jpg", class: "customer-pic" %>
-        <div class="name">Howard H.</div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <div class="customer-info">
-        <%= image_tag  "//s3-media3.fl.yelpcdn.com/photo/kScFr-jETeB2UlXZli8hZQ/60s.jpg", class: "customer-pic" %>
-        <div class="name">Mark P.</div>
-      </div>
-      <q>
-        I've been coming here for close to two years now and have had nothing but great experiences.
-        Joel and Susie are great and our dog looks fantastic every time!
-      </q>
-    </div>
-    <div class="testimonial">
-      <q>
-        A quick update to thank Joel & Susie at Super Pups from the bottom of our hearts for finding our Francis' cancer 3+ years ago.
-        He's now outlived the expected lifespan following diagnosis and just today got another good report.
-        It might have been very different if Joel and Susie weren't so good at what they do and brought it to my attention!
-        Thank you, thank you, thank you!! I'm forever in your debt!
-      </q>
-      <div class="customer-info">
-        <%= image_tag  "//s3-media1.fl.yelpcdn.com/photo/kyY-ErPO2DioZ9QWRQZmYw/60s.jpg", class: "customer-pic" %>
-        <div class="name">Amy C.</div>
-      </div>
-    </div>
-    <div class="testimonial">
-      <div class="customer-info">
-        <%= image_tag  "//s3-media4.fl.yelpcdn.com/photo/_fL5CBzBHDUQSP9Gnjoa7w/60s.jpg", class: "customer-pic" %>
-        <div class="name">Claudia D.</div>
-      </div>
-      <q>
-        Love Super Pups very much. My doggies always looks amazing when I pick them up.
-        Great groomers and always very accommodating and friendly.
-        Always a wonderful experience.
-        Please give them a call!! They ROCK.
-      </q>
-    </div>
-  </section>
-  <section class="contact">
-    <h2 id="contact">Contact</h2>
-    <div class="social-media-container">
-      <a href="https://www.facebook.com/pages/Super-Pups/122012001144458"><%= image_tag  "facebook-128.png", class: "icon" %></a>
-      <a href="www.yelp.com/biz/super-pups-san-mateo"><%= image_tag  "yelp-128.png", class: "icon" %></a>
-      <a href="https://plus.google.com/101933917726912637749/about"><%= image_tag  "googleplus-128.png", class: "icon" %></a>
-    </div>
-    <div id="google-map"></div>
-  </section>
+    <hr>
+
+    <p>Disclaimer area lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, nostrum repudiandae saepe.</p>
+  </footer>
 
 </main>
