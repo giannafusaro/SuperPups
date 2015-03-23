@@ -21,10 +21,6 @@ h1 { font-size: $h1-font-size; }
 h2 { font-size: $h2-font-size; }
 h3 { font-size: $h3-font-size; }
 
-h1, h2, h3 {
-  margin: 1.5em;
-}
-
 p {
   padding: 1em;
 }
@@ -33,101 +29,172 @@ p {
 // Footer
 /////////////////////////////////////////////////////////////////////////////////
 
-.footer {
+footer {
   position: relative;
-  z-index: 1;
-
-  $base-spacing: 1.5em !default;
-  $base-accent-color: #477DCA !default;
-  $medium-screen: em(640) !default;
-  $large-screen: em(860) !default;
-
-  ul {
-    padding: 0;
+  @include display(flex);
+  @include justify-content(center);
+  @include align-items(center);
+  height: 500px;
+  background-image: url(asset_path('collage-4.jpg'));
+  background-size: auto 100%;
+  &:before {
+    content: '';
+    @include position(absolute, 0px 0px 0px 0px);
+    @include linear-gradient(0deg, rgba(#40526b,0.8), rgba(#40526b,1))
   }
 
-  li {
-    list-style: none;
-    line-height: 1.5em;
-  }
+  .footer-content {
+    position: relative;
+    z-index: 3;
+    width: 55%;
+    margin-left: auto;
+    margin-right: auto;
 
-  a {
-    text-decoration: none;
-  }
-
-  $footer-background: desaturate(darken($base-accent-color, 20%), 30%);
-  $footer-color: white;
-  $footer-link-color: transparentize($footer-color, 0.6);
-  $footer-disclaimer-color: transparentize($footer-color, 0.6);
-
-  background: $footer-background;
-  padding: ($base-spacing * 2) $gutter;
-  width: 100%;
-
-  .footer-logo {
-    margin-bottom: 2em;
-    text-align: center;
-
-    img {
-      height: 3em;
+    .footer-links {
+      @include display(flex);
+      @include justify-content(space-around);
     }
-  }
 
-  .footer-links {
-    @include clearfix;
-    margin-bottom: $base-spacing;
-
-    @include media($medium-screen) {
-      @include shift(3);
+    h3 {
+      color: rgba(255,255,255,0.9);
+      text-shadow: -1px -2px 0px rgba(0,0,0, 0.65);
     }
-  }
 
-  ul {
-    margin-bottom: $base-spacing * 2;
-
-    @include media($medium-screen) {
-      @include span-columns(3);
-      @include omega(3n);
-      @include clearfix;
+    a {
+      color: rgba(255,255,255,0.4);
+      &:hover { color: rgba(255,255,255,0.8); }
     }
-  }
 
-  li {
-    text-align: center;
-
-    @include media($medium-screen) {
-      text-align: left;
+    ul {
+      margin-bottom: 3em;
+      li {
+        display: block;
+        text-align: center;
+      }
     }
-  }
 
-  li a {
-    color: $footer-link-color;
-
-    &:focus,
-    &:hover {
-      color: transparentize($footer-color, 0);
+    hr {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin: 0 auto 1.5em;
+      width: 12em;
     }
-  }
 
-  li h3 {
-    color: $footer-color;
-    font-size: 1em;
-    font-weight: 800;
-    margin-bottom: 0.4em;
-  }
+    p {
+      text-align: center;
+      color: rgba(255,255,255,0.8);
+    }
 
-  hr {
-    border: 1px solid transparentize($footer-disclaimer-color, 0.3);
-    margin: 0 auto $base-spacing;
-    width: 12em;
-  }
-
-  p {
-    color: $footer-disclaimer-color;
-    font-size: 0.9em;
-    line-height: 1.5em;
-    margin: auto;
-    max-width: 35em;
-    text-align: center;
+    .gianna-codes {
+      font-weight: 600;
+      color: rgba(#9B59B6, 0.65);
+      &:hover {
+        color: rgba(#9A12B3, 0.85);
+      }
+    }
   }
 }
+
+
+
+
+
+
+
+// .footer {
+//   position: relative;
+//   z-index: 1;
+//
+//   $base-spacing: 1.5em !default;
+//   $base-accent-color: #477DCA !default;
+//   $medium-screen: em(640) !default;
+//   $large-screen: em(860) !default;
+//
+//   ul {
+//     padding: 0;
+//   }
+//
+//   li {
+//     list-style: none;
+//     line-height: 1.5em;
+//   }
+//
+//   a {
+//     text-decoration: none;
+//   }
+//
+//   $footer-background: desaturate(darken($base-accent-color, 20%), 30%);
+//   $footer-color: white;
+//   $footer-link-color: transparentize($footer-color, 0.6);
+//   $footer-disclaimer-color: transparentize($footer-color, 0.6);
+//
+//   background: $footer-background;
+//   padding: ($base-spacing * 2) $gutter;
+//   width: 100%;
+//
+//   .footer-logo {
+//     margin-bottom: 2em;
+//     text-align: center;
+//
+//     img {
+//       height: 3em;
+//     }
+//   }
+//
+//   .footer-links {
+//     @include clearfix;
+//     margin-bottom: $base-spacing;
+//
+//     @include media($medium-screen) {
+//       @include shift(3);
+//     }
+//   }
+//
+//   ul {
+//     margin-bottom: $base-spacing * 2;
+//
+//     @include media($medium-screen) {
+//       @include span-columns(3);
+//       @include omega(3n);
+//       @include clearfix;
+//     }
+//   }
+//
+//   li {
+//     text-align: center;
+//
+//     @include media($medium-screen) {
+//       text-align: left;
+//     }
+//   }
+//
+//   li a {
+//     color: $footer-link-color;
+//
+//     &:focus,
+//     &:hover {
+//       color: transparentize($footer-color, 0);
+//     }
+//   }
+//
+//   li h3 {
+//     color: $footer-color;
+//     font-size: 1em;
+//     font-weight: 800;
+//     margin-bottom: 0.4em;
+//   }
+//
+//   hr {
+//     border: 1px solid transparentize($footer-disclaimer-color, 0.3);
+//     margin: 0 auto $base-spacing;
+//     width: 12em;
+//   }
+//
+//   p {
+//     color: $footer-disclaimer-color;
+//     font-size: 0.9em;
+//     line-height: 1.5em;
+//     margin: auto;
+//     max-width: 35em;
+//     text-align: center;
+//   }
+// }
