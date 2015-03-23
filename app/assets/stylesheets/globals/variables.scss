@@ -1,83 +1,18 @@
-@font-face {
-    font-family: 'aleolightitalic';
-    src: font-url('aleo-lightitalic-webfont-webfont.eot');
-    src: font-url('aleo-lightitalic-webfont-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('aleo-lightitalic-webfont-webfont.woff2') format('woff2'),
-         font-url('aleo-lightitalic-webfont-webfont.woff') format('woff'),
-         font-url('aleo-lightitalic-webfont-webfont.ttf') format('truetype'),
-         font-url('aleo-lightitalic-webfont-webfont.svg#aleolightitalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'flagship_slabbold';
-    src: font-url('Flagship Slab - Bold-webfont.eot');
-    src: font-url('Flagship Slab - Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('Flagship Slab - Bold-webfont.woff2') format('woff2'),
-         font-url('Flagship Slab - Bold-webfont.woff') format('woff'),
-         font-url('Flagship Slab - Bold-webfont.ttf') format('truetype'),
-         font-url('Flagship Slab - Bold-webfont.svg#flagship_slabbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'flagship_slabregular';
-    src: font-url('Flagship Slab - Regular-webfont.eot');
-    src: font-url('Flagship Slab - Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('Flagship Slab - Regular-webfont.woff2') format('woff2'),
-         font-url('Flagship Slab - Regular-webfont.woff') format('woff'),
-         font-url('Flagship Slab - Regular-webfont.ttf') format('truetype'),
-         font-url('Flagship Slab - Regular-webfont.svg#flagship_slabregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+@mixin custom-font($family, $filename, $weight) {
+  font-family: $family;
+  font-weight: $weight;
+  src: font-url("#{$filename}.eot");
+  src: font-url("#{$filename}.eot?#iefix") format('embedded-opentype'),
+  font-url("#{$filename}.woff") format('woff'),
+  font-url("#{$filename}.ttf") format('truetype'),
+  font-url("#{$filename}.svg") format('svg');
 }
 
-@font-face {
-    font-family: 'nexa_rust_extrasfree';
-    src: font-url('NexaRustExtras-Free-webfont.eot');
-    src: font-url('NexaRustExtras-Free-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('NexaRustExtras-Free-webfont.woff2') format('woff2'),
-         font-url('NexaRustExtras-Free-webfont.woff') format('woff'),
-         font-url('NexaRustExtras-Free-webfont.ttf') format('truetype'),
-         font-url('NexaRustExtras-Free-webfont.svg#nexa_rust_extrasfree') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'aleobold';
-    src: font-url('aleo-bold-webfont-webfont.eot');
-    src: font-url('aleo-bold-webfont-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('aleo-bold-webfont-webfont.woff2') format('woff2'),
-         font-url('aleo-bold-webfont-webfont.woff') format('woff'),
-         font-url('aleo-bold-webfont-webfont.ttf') format('truetype'),
-         font-url('aleo-bold-webfont-webfont.svg#aleobold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'aleolight';
-    src: font-url('aleo-light-webfont-webfont.eot');
-    src: font-url('aleo-light-webfont-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('aleo-light-webfont-webfont.woff2') format('woff2'),
-         font-url('aleo-light-webfont-webfont.woff') format('woff'),
-         font-url('aleo-light-webfont-webfont.ttf') format('truetype'),
-         font-url('aleo-light-webfont-webfont.svg#aleolight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'aleoregular';
-    src: font-url('aleo-regular-webfont-webfont.eot');
-    src: font-url('aleo-regular-webfont-webfont.eot?#iefix') format('embedded-opentype'),
-         font-url('aleo-regular-webfont-webfont.woff2') format('woff2'),
-         font-url('aleo-regular-webfont-webfont.woff') format('woff'),
-         font-url('aleo-regular-webfont-webfont.ttf') format('truetype'),
-         font-url('aleo-regular-webfont-webfont.svg#aleoregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
+// Fonts
+@font-face { @include custom-font('flagship_slabbold', 'Flagship Slab - Bold-webfont', 'bold'); }
+@font-face { @include custom-font('flagship_slabregular', 'Flagship Slab - Regular-webfont', 'regular'); }
+@font-face { @include custom-font('aleolightitalic', 'aleo-lightitalic-webfont-webfont', 'regular'); }
+@font-face { @include custom-font('aleobold', 'aleo-bold-webfont-webfont', 'bold'); }
 
 
 // Typography
