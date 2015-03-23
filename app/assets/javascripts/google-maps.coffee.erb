@@ -1,0 +1,45 @@
+
+initMap = ->
+  # SuperPups location and left-of-center map position
+  location = new (google.maps.LatLng)(37.54575, -122.30755)
+  position = new (google.maps.LatLng)(37.549953, -122.2668106174469)
+
+  # Initialize map in the DOM, passing our settings
+  map = new google.maps.Map(document.getElementById('google-map'),
+    center: position
+    zoom: 13
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+    scrollwheel: false
+    draggable: true
+    disableDefaultUI: true
+  )
+
+  # Add a marker for SuperPups
+  marker = new (google.maps.Marker)(
+    position: location
+    map: map
+    title: 'Super Pups'
+    icon: "<%= image_url 'contact/pin.png' %>"
+  )
+
+  # Info Window
+  infoWindow = new (google.maps.InfoWindow)(
+    content: $('#info-window').html()
+  )
+
+  google.maps.event.addListener marker, 'click', ->
+    infoWindow.open map, marker
+
+  # Custom Zoom Buttons
+  google.maps.event.addDomListener $('[data-map="zoom-in"]')[0], 'click', ->
+    map.setZoom map.getZoom() + 1
+
+  google.maps.event.addDomListener $('[data-map="zoom-out"]')[0], 'click', ->
+    map.setZoom map.getZoom() - 1
+
+###############################
+# Init
+###############################
+
+$(document).ready ->
+  initMap()
