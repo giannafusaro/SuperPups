@@ -1,5 +1,7 @@
 
 #about {
+  background: $paper-background;
+
   h2 {
     font-family: 'flagship_slabbold';
     text-shadow: 1px 1px 0px #fff;
@@ -11,67 +13,51 @@
     line-height: 1.95em;
     letter-spacing: 0.025em;
     text-shadow: 1px 1px 0px rgba(255,255,255,0.95);
-
-    &.photo-align-left {
+    &.align-left {
+      text-align: right;
       .polaroid {
         float: left;
-        margin: 2em 2em 1em -2em;
-        @include transform(rotate(-6deg));
-        box-shadow: -6px 6px 30px 3px rgba(0, 0, 0, 0.5);
-      }
-      p {
-        text-align: right;
+        margin: 2em 2em 1em -0.5em;
+        border: 1px solid #e0e0e0;
+        box-shadow: -12px 15px 30px -3px #999;
+        @include transform(rotate(-5deg) translateZ(0));
       }
     }
-
-    &.photo-align-right {
+    &.align-right {
+      text-align: left;
       .polaroid {
         float: right;
-        margin: 2em -2em 1em 2em;
-        @include transform(rotate(6deg));
-        box-shadow: 6px 6px 30px 3px rgba(0, 0, 0, 0.5);
-      }
-      p {
-        text-align: left;
+        margin: 2em -0.5em 1em 2em;
+        border: 1px solid #e0e0e0;
+        box-shadow: 15px 12px 30px -3px #999;
+        @include transform(rotate(5deg) translateZ(0));
       }
     }
-
-    &:first-of-type .polaroid {
-      margin-top: 1em;
-    }
-
-    &:last-of-type .polaroid {
-      margin-top: 1em;
-    }
+    &:first-of-type .polaroid { margin-top: 1em; }
+    &:last-of-type .polaroid { margin-top: 1em; }
   }
 
   .polaroid {
-    margin: 20px;
-    padding: 20px 20px 50px 20px;
-    width: 400px; height: 350px;
+    width: 32%;
     background-color: #ffffff;
     background-image: url(asset_path('textures/natural-paper.png'));
-
-    .polaroid-image {
-      margin: 0;
-      width: 100%; height: 265px;
-      overflow: hidden;
-      box-shadow: inset 0px 0px 60px 10px rgba(#022038,0.75);
-      img {
-        position: relative;
-        min-width: 100%;
-        min-height: 100%;
-        z-index: -1;
+    figure {
+      margin: 5%;
+      > a {
+        display: block;
+        height: 80%;
+        box-shadow: inset 0px 0px 2rem 0.5rem rgba(#022038,0.75);
+        background-size: cover;
       }
-    }
-
-    .polaroid-caption {
-      font-family: 'Indie Flower', cursive;
-      text-shadow: none;
-      font-size: 1.4em;
-      line-height: 2.2em;
-      letter-spacing: 0.18em;
-      font-weight: bold;
+      figcaption {
+        font-family: 'Indie Flower', cursive;
+        font-size: 1.75rem;
+        font-weight: bold;
+        line-height: 4.5rem;
+        letter-spacing: 0.18rem;
+        text-align: center;
+        text-shadow: none;
+      }
     }
   }
 }
