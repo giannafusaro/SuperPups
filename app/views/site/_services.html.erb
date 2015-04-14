@@ -1,0 +1,36 @@
+<%
+  services_data = [
+    { heading: 'Haircut & Brushing', body: 'We\'ll get your pet looking like a SuperPup!', icon: 'superpups-cut' },
+    { heading: 'Wash & Dry', body: 'Full bathing and drying services using only the finest shampoos specially imported from New York.', icon: 'superpups-wash' },
+    { heading: 'Nail Trimming', body: 'Keep your pet\'s nails neatly manicured and healthy.', icon: 'superpups-claw' },
+    { heading: 'Teeth Cleaning', body: 'Ensure their smile is as bright as can be!', icon: 'superpups-toothbrush' },
+    { heading: 'All-Day Care', body: 'Leave your pup with us while you work! They can enjoy the backyard or be kennelled.', icon: 'superpups-kennel' },
+    { heading: 'Feline Grooming', body: 'Although we specialize in dogs, we also offer services for all type of cats.', icon: 'superpups-cat' },
+  ]
+%>
+
+<section id="services">
+  <div class="collar">
+    <div class="collar-stitching">
+      <h2>Pet Services</h2>
+    </div>
+  </div>
+  <div class="container">
+    <ul>
+      <% services_data.each do |data| %>
+        <li>
+          <div class="services-icon">
+            <i class="<%= data[:icon] %>"></i>
+          </div>
+          <div class="services-text">
+            <h3><%= data[:heading] %></h3>
+            <p><%= data[:body] %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+    <span class="services-cta">...and much more! Call us today</span>
+    <h3 class="services-phone">(650) 349-7877</h3>
+    <!-- We specialize in Bichons, Poodles, Terriers, Labradoodles, Goldendoodles, Goldens, and Shihtuzs. -->
+  </div>
+</section>

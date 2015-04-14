@@ -1,0 +1,93 @@
+#services {
+  padding: 9em 0 3em;
+  @include retina-textured-background;
+  
+  .collar {
+    z-index: 2;
+    box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.5);
+    .collar-stitching {
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      h2 {
+        margin: 0;
+        font-family: 'flagship_slabbold';
+        text-shadow: -1px -1px 0px rgba(0,0,0,0.75);
+        color: #D2B48C;
+      }
+    }
+  }
+
+  ul {
+    @include display(flex);
+    @include align-items(flex-start);
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    @include clearfix;
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    margin: 1.25em 0;
+    padding: 1em;
+    min-width: 50%;
+    max-width: 50%;
+    max-height: 192px;
+    min-height: 192px;
+    text-align: left;
+
+    .services-icon {
+      margin-right: 1.5em;
+      min-width: 100px;
+      max-width: 100px;
+      i {
+        display: block;
+        @include size(100px);
+        background-color: #ffe100;
+        border: 2px solid rgba($black, 0.4);
+        border-radius: 50%;
+        font-size: 4.5em;
+        color: rgba(#613c1b, 0.7);
+        text-align: center;
+        line-height: 1.33em;
+        @include transition(all 0.1s);
+      }
+    }
+
+    .services-text {
+      h3 {
+        text-shadow: 1px 1px 0px $white;
+        font-size: 2em;
+      }
+      p {
+        display: block;
+        padding: 0;
+        font-size: 1.15em;
+        line-height: 1.55em;
+      }
+      &:nth-child(odd) {
+        padding-right: 0.5em;
+      }
+    }
+
+    &:hover {
+      i {
+        background-color: rgba($light-blue,0.75);
+        color: $white;
+      }
+    }
+
+
+  }
+  .services-cta {
+    font-size: 1.25em;
+  }
+  .services-phone {
+    font-size: 3.5em;
+  }
+}
