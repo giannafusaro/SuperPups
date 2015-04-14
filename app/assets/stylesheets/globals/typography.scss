@@ -1,56 +1,62 @@
 body {
   @include font-feature-settings("kern", "liga", "pnum");
   -webkit-font-smoothing: antialiased;
-  color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
-  line-height: $base-line-height;
+  color: $base-font-color;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+///////////////////////////////////////////
+// Fonts
+///////////////////////////////////////////
+
+// NOTE:
+//  Family names must be lowercased and underscored in order to match FontSquirrel's generated SVGs
+@font-face { @include custom-font('flagship_slabbold', 'FlagshipSlab-Bold-webfont', 'bold'); }
+@font-face { @include custom-font('flagship_slabregular', 'FlagshipSlab-Regular-webfont', 'regular'); }
+@font-face { @include custom-font('aleolightitalic', 'Aleo-LightItalic-webfont', 'regular'); }
+@font-face { @include custom-font('aleobold', 'Aleo-Bold-webfont', 'regular'); }
+@font-face { @include custom-font('spinnakerregular', 'Spinnaker-Regular-webfont', 'regular'); }
+@font-face { @include custom-font('indie_flowerregular', 'IndieFlower-webfont', 'regular'); }
+
+///////////////////////////////////////////
+// Headers
+///////////////////////////////////////////
+
+h1, h2, h3, h4, h5, h6 {
   font-family: $heading-font-family;
   font-size: $base-font-size;
   line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
+  margin: 0;
 }
 
+h1 { font-size: 7em; }
+h2 { font-size: 2.5em; }
+
+///////////////////////////////////////////
+// Body Text / Links
+///////////////////////////////////////////
+
 p {
-  margin: 0 0 $small-spacing;
+  margin: 0 0 0.25em;
+  padding: 1em;
+
+  font-size: 1.15em;
+  line-height: 1.55em;
+  letter-spacing: 0.025em;
 }
 
 a {
-  color: $action-color;
+  color: $dark-blue;
   text-decoration: none;
-  transition: color 0.1s linear;
+  @include transition(color 0.1s);
 
-  &:active,
-  &:focus,
-  &:hover {
-    color: darken($action-color, 15%);
+  &:active, &:focus, &:hover {
+    color: darken($dark-blue, 15%);
     cursor: pointer;
   }
 
-  &:active,
-  &:focus {
+  &:active, &:focus {
     outline: none;
   }
-}
-
-hr {
-  border-bottom: $base-border;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  margin: $base-spacing 0;
-}
-
-img,
-picture {
-  margin: 0;
-  max-width: 100%;
 }

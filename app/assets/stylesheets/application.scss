@@ -1,14 +1,13 @@
+@import "normalize";
 @import "bourbon";
 @import "neat";
 
-// Normalize
-@import "normalize";
-
-// Globals (from Bitters)
+// Globals
 @import "globals/variables";
+@import "globals/mixins";
 @import "globals/buttons";
-@import "globals/forms";
 @import "globals/typography";
+@import "globals/icons";
 @import "globals/boxes";
 
 // Views

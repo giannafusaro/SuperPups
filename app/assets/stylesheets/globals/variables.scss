@@ -1,65 +1,37 @@
-@mixin custom-font($family, $filename, $weight) {
-  font-family: $family;
-  font-weight: $weight;
-  src: font-url("#{$filename}.eot");
-  src: font-url("#{$filename}.eot?#iefix") format('embedded-opentype'),
-  font-url("#{$filename}.woff") format('woff'),
-  font-url("#{$filename}.ttf") format('truetype'),
-  font-url("#{$filename}.svg") format('svg');
-}
 
-// Fonts
-@font-face { @include custom-font('flagship_slabbold', 'FlagshipSlab-Bold-webfont', 'bold'); }
-@font-face { @include custom-font('flagship_slabregular', 'FlagshipSlab-Regular-webfont', 'regular'); }
-@font-face { @include custom-font('aleolightitalic', 'aleo-lightitalic-webfont-webfont', 'regular'); }
-@font-face { @include custom-font('aleobold', 'aleo-bold-webfont-webfont', 'bold'); }
-
-
-// Typography
-$base-font-family: 'Spinnaker', sans-serif;
-$heading-font-family: 'flagship_slabbold';
-
-// Font Sizes
+// Base Font
+$base-font-family: 'spinnakerregular', sans-serif;
 $base-font-size: 1em;
-$h1-font-size: $base-font-size * 5.0;
-$h2-font-size: $base-font-size * 2.5;
-$h3-font-size: $base-font-size * 2.0;
-$h4-font-size: $base-font-size * 1.5;
-$h5-font-size: $base-font-size * 1.25;
-$h6-font-size: $base-font-size;
-
-// Line height
+$base-font-color: #333;
 $base-line-height: 1.5;
-$heading-line-height: 1.2;
 
-// Other Sizes
-$base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
-$small-spacing: $base-spacing / 2;
-$base-z-index: 0;
+// Header Font
+$heading-font-family: 'flagship_slabbold', serif;
+$heading-line-height: 1.2;
 
 // Colors
 $light-blue: #42a0fa;
 $blue: #1C75BC;
 $dark-blue: #025cb3;
 $medium-blue: #0681f7;
+
 $yellow: #FFFC04;
 $pink: #FD046D;
 $orange: #FF9904;
-$white: #ECF0F1;
+
+$off-white: #ECF0F1;
+$white: #fff;
+$black: #000;
+
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 
-// Font Colors
-$base-background-color: #fff;
-$base-font-color: $dark-gray;
-$action-color: $dark-blue;
+// Social Colors
+$facebook-blue: #3b5998;
+$yelp-red: #af0606;
+$google-plus-red: #dd4b39;
 
-// Border
-$base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
-
-// Forms
-$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+// Backgrounds
+$paper-background: url(asset-path("textures/paper-fibers.jpg"));
+$white-wall-bg: 'backgrounds/white_wall';
