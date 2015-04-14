@@ -1,0 +1,14 @@
+
+[class*="aspect-ratio"] {
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+  }
+  > :first-child {
+    @include position(absolute, 0px);
+  }
+
+  &.aspect-ratio-1x1:before { padding-top: 100%; }
+  &.aspect-ratio-16x9:before { padding-top: 40%; }
+}
