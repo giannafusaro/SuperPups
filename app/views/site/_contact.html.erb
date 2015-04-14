@@ -1,7 +1,8 @@
 <%
   contact_data = {
-    heading: 'SuperPups Pet Groomers',
-    address: '2230 S. El Camino Real, San Mateo, CA 94403',
+    heading: 'SuperPups',
+    subheading: 'Pet Grooming Service',
+    address: '2230 S. El Camino Real<br/> San Mateo, CA 94403',
     hours: 'Open Tuesday - Saturday<br />8:00 am - 4:30 pm',
     phone: '(650) 349-7877',
     facebook: 'https://www.facebook.com/pages/Super-Pups/122012001144458',
@@ -29,15 +30,15 @@
       <!-- DIRECTIONS CTA & FORM -->
       <div id="directions-control">
         <a class="directions-cta pulldown" data-toggle="#directions-control">
-          Get Directions <i class="fa fa-map-marker fa-lg fa-fw"></i>
+          Get Directions <%= icon('map-marker') %>
         </a>
         <div class="directions-form pulldown">
           <%= form_tag 'http://maps.google.com/maps', method: :get, target: '_blank' do %>
             <ul class="fieldset">
               <li><%= label_tag 'Starting Address:' %></li>
               <li><%= text_field_tag :saddr %></li>
-              <li><%= submit_tag "Map" %></li>
-              <li><%= icon_link 'fa fa-times', data_toggle: '#directions-control', class: 'btn btn-close' %></li>
+              <li><%= submit_tag "Map", class: 'btn' %></li>
+              <li><%= icon_link 'close', data_toggle: '#directions-control', class: 'btn btn-close' %></li>
             </ul>
             <%= hidden_field_tag :daddr, "#{contact_data[:heading]}, #{contact_data[:address]}" %>
           <% end %>
@@ -45,43 +46,28 @@
       </div>
     </aside>
 
-    <!-- Contact Info Drawer -->
+    <!-- Contact Information Drawer -->
     <aside id="contact-info-drawer" class="active">
-
-      <!-- DRAWER CONTROL -->
       <div id="drawer-control">
-        <%= icon_link 'fa fa-chevron-left fa-fw', data_toggle: '#contact-container', class: 'map-btn' %>
+        <%= icon_link 'chevron-left', data_toggle: '#contact-container', class: 'map-btn' %>
       </div>
-
-      <!-- ZOOM CONTROL -->
       <div id="zoom-control">
-        <%= icon_link 'fa fa-plus fa-fw', data_map: 'zoom-in', class: 'map-btn' %>
-        <%= icon_link 'fa fa-minus fa-fw', data_map: 'zoom-out', class: 'map-btn' %>
+        <%= icon_link 'plus', data_map: 'zoom-in', class: 'map-btn' %>
+        <%= icon_link 'minus', data_map: 'zoom-out', class: 'map-btn' %>
       </div>
-
-      <div id="contact-info">
-        <h3><%= contact_data[:heading] %></h3>
-        <p><%= contact_data[:address] %></p>
+      <address>
+        <h3 class="embossed" text="<%= contact_data[:heading] %>"><%= contact_data[:heading] %></h3>
+        <h4><%= contact_data[:subheading] %></h4>
+        <hr />
+        <p><%= sanitize contact_data[:address] %></p>
         <p><%= sanitize contact_data[:hours] %></p>
         <h3><%= contact_data[:phone] %></h3>
-        <ul>
-          <li>
-            <%= link_to contact_data[:facebook] do %>
-              <%= image_tag "facebook-128.png", class: "icon" %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to contact_data[:yelp] do %>
-              <%= image_tag "yelp-128.png", class: "icon" %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to contact_data[:google_plus] do %>
-              <%= image_tag "googleplus-128.png", class: "icon" %>
-            <% end %>
-          </li>
+        <ul class="social-icons">
+          <li><%= link_to icon('facebook'), contact_data[:facebook], class: 'facebook', target: '_blank' %></li>
+          <li><%= link_to icon('yelp'), contact_data[:yelp], class: 'yelp', target: '_blank' %></li>
+          <li><%= link_to icon('google-plus'), contact_data[:google_plus], class: 'google-plus', target: '_blank' %></li>
         </ul>
-      </div>
+      </address>
     </aside>
 
     <!-- Google Map & Info Window -->

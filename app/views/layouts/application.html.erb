@@ -1,19 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SuperPups</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Spinnaker|Indie+Flower' rel='stylesheet' type='text/css' data-noprefix>
-  <script src="//maps.google.com/maps/api/js?sensor=true"></script>
-  <%= stylesheet_link_tag 'application', media: 'all'%>
-  <%= javascript_include_tag 'application'%>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>SuperPups</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <%= stylesheet_link_tag 'application', media: 'all'%>
+    <%= javascript_include_tag 'application'%>
+    <script src="//maps.google.com/maps/api/js?sensor=true"></script>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield :parallax %>
 
+    <section id="jumbotron">
+      <div class="jumbotron-content">
+        <h1>SuperPups</h1>
+        <h2>San Mateo's Premier Pet Salon</h2>
+      </div>
+    </section>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+    <footer>
+      <div class="content">
+        <div class="footer-links">
+          <ul>
+            <li><h3>Follow Us</h3></li>
+            <li><a href="javascript:void(0)">Facebook</a></li>
+            <li><a href="javascript:void(0)">Yelp</a></li>
+            <li><a href="javascript:void(0)">Google+</a></li>
+          </ul>
+          <ul>
+            <li><h3>SuperPups</h3></li>
+            <li><a href="javascript:void(0)">About Us</a></li>
+            <li><a href="javascript:void(0)">Pet Services</a></li>
+            <li><a href="javascript:void(0)">Testimonials</a></li>
+            <li><a href="javascript:void(0)">Contact Us</a></li>
+          </ul>
+          <ul>
+            <li><h3>Legal</h3></li>
+            <li><a href="javascript:void(0)">Terms and Conditions</a></li>
+            <li><a href="javascript:void(0)">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-details">
+          <p>Copyright &copy; <%= Time.now.year %> SuperPups. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
