@@ -1,0 +1,11 @@
+
+###############################
+# Init
+###############################
+
+$(document).ready ->
+
+  # Trigger CSS3 Animations
+  $('[data-toggle]').on 'click', (event) ->
+    target = $(this).data('toggle')
+    $(target).toggleClass('active')

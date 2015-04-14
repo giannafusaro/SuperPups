@@ -2,13 +2,24 @@
 // Featured Testimonial
 /////////////////////////////////////////////////////////////////////////////////
 
+#featured-testimonial-background {
+  position: fixed;
+  left: 0; bottom: 0;
+  z-index: -1;
+  @include size(100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(asset_path('backgrounds/1440x800-three-bichons-vintage.jpg'));
+  @include transform(translateZ(0));
+}
+
 #featured-testimonial {
-  position: relative;
   @include display(flex);
   @include align-items(center);
+  margin-top: 0;
   width: 100%; height: 400px;
-  overflow: hidden;
-  @include transform(translate3d(0px, 0px 0px));
+  background: transparent;
 
   .featured-testimonial-content {
     position: relative;
@@ -31,18 +42,14 @@
   }
 }
 
-#featured-testimonial-background {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 800px;
-  background: #022038 url(asset_path("background/1440x800-three-bichons-vintage.jpg")) 50% 50% no-repeat;
-}
-
 /////////////////////////////////////////////////////////////////////////////////
 // Testimonials
 /////////////////////////////////////////////////////////////////////////////////
 
 #testimonials {
+  padding: 2em;
+  @include retina-textured-background;
+
   h2 {
     font-family: 'flagship_slabbold';
     text-shadow: 1px 1px 0px #fff;
@@ -54,54 +61,106 @@
   }
 
   li {
-    @include clearfix;
     @include display(flex);
-    @include align-items(center);
     margin-bottom: 4em;
-    .reviewer {
-      min-width: 100px;
-      text-align: center;
-      .reviewer-photo {
-        height: 60px;
-        border-radius: 50%;
-      }
-      .reviewer-name {
-        display: block;
-        font-family: 'aleobold';
-        white-space: nowrap;
-        text-shadow: 1px 1px 0px rgba(255,255,255,0.95);
-      }
-    }
-
-    q {
-      position: relative;
-      top: -0.25em;
-      font-size: 1.05em;
-      line-height: 1.5em;
-      letter-spacing: 0.025em;
-      text-shadow: 1px 1px 0px rgba(255,255,255,0.95);
-    }
-
-    &:nth-child(odd) {
-      .reviewer {
-        order: 1;
-        margin-right: 1em;
-      }
-      q {
-        order: 2;
-        text-align: left;
-      }
-    }
-
     &:nth-child(even) {
-      .reviewer {
-        order: 2;
+      .flex-photo {
+        @include order(2);
         margin-left: 1em;
+        margin-right: 0em;
       }
-      q {
-        order: 1;
-        text-align: right;
+      .flex-text {
+        @include order(1);
+        p { text-align: right; }
       }
     }
   }
+
+  .flex-photo {
+    // border:1px solid #00ff00;
+    @include display(flex);
+    @include align-items(center);
+    margin-left: 0em;
+    margin-right: 1em;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .flex-text {
+    // border: 1px solid purple;
+    @include display(flex);
+    @include align-items(center);
+    p {
+      text-align: left;
+      font-size: 1.15em;
+      line-height: 1.3em;
+    }
+  }
+
+  figure {
+    @include transform(translateZ(0));
+    span {
+      display: block;
+      margin: 0 auto 0.25em;
+      @include size(100px);
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      border: 5px solid #a2cbef;
+    }
+    figcaption {
+      display: block;
+      font-family: 'aleobold';
+      white-space: nowrap;
+    }
+  }
+
+    // .reviewer {
+    //   text-align: center;
+    //   figure {
+    //     display: inline-block;
+    //     position: relative;
+    //     @include size(90px);
+    //     margin: 0px;
+    //     background-size: cover;
+    //     background-position: center;
+    //     border-radius: 50%;
+    //     border: 5px solid #a2cbef;
+    //
+    //   }
+    //   figcaption {
+    //     // @include position(absolute, 0px 0px 0px 0px);
+    //     display: block;
+    //     font-family: 'aleobold';
+    //     white-space: nowrap;
+    //   }
+    // }
+    //
+    // q {
+    //   line-height: 1.5em;
+    //   letter-spacing: 0.025em;
+    // }
+    //
+    // &:nth-child(odd) {
+    //   .reviewer {
+    //     order: 1;
+    //     margin-right: 1em;
+    //   }
+    //   q {
+    //     order: 2;
+    //     text-align: left;
+    //   }
+    // }
+    //
+    // &:nth-child(even) {
+    //   .reviewer {
+    //     order: 2;
+    //     margin-left: 1em;
+    //   }
+    //   q {
+    //     order: 1;
+    //     text-align: right;
+    //   }
+    // }
+  // }
 }

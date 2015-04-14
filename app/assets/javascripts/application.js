@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require prefixfree.min
+//= require verge
 //= require_tree .
