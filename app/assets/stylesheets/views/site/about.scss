@@ -1,63 +1,74 @@
 
 #about {
-  background: $paper-background;
+  padding: 11em 0 6em;
+  @include retina-textured-background;
 
-  h2 {
-    font-family: 'flagship_slabbold';
-    text-shadow: 1px 1px 0px #fff;
+  .collar .collar-stitching {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    h2 {
+      margin: 0 3.5em;
+      width: 100px;
+      font-family: 'flagship_slabbold';
+      text-shadow: -1px -1px 0px rgba(0,0,0,0.75);
+      color: #D2B48C;
+      letter-spacing: 0.25em;
+      &:first-of-type { text-align: right; }
+      &:last-of-type { text-align: left; }
+    }
   }
 
-  .paragraph {
-    @include clearfix;
-    font-size: 1.25em;
-    line-height: 1.95em;
-    letter-spacing: 0.025em;
-    text-shadow: 1px 1px 0px rgba(255,255,255,0.95);
-    &.align-left {
-      text-align: right;
-      .polaroid {
-        float: left;
-        margin: 2em 2em 1em -0.5em;
-        border: 1px solid #e0e0e0;
-        box-shadow: -12px 15px 30px -3px #999;
-        @include transform(rotate(-5deg) translateZ(0));
+
+  h2 { text-shadow: 1px 1px 0px $white; }
+
+  article {
+    @include clearfix();
+    @include display(flex);
+    @include align-items(center);
+    .flex-photo {
+      position: relative;
+      margin-top: 1.25em;
+      min-width: 30%;
+      &.align-left {
+        @include order(1);
       }
     }
-    &.align-right {
+    .flex-text {
+      font-size: 1.15em;
       text-align: left;
-      .polaroid {
-        float: right;
-        margin: 2em -0.5em 1em 2em;
-        border: 1px solid #e0e0e0;
-        box-shadow: 15px 12px 30px -3px #999;
-        @include transform(rotate(5deg) translateZ(0));
+      &.align-left {
+        @include order(2);
+        text-align: right;
       }
     }
-    &:first-of-type .polaroid { margin-top: 1em; }
-    &:last-of-type .polaroid { margin-top: 1em; }
   }
 
-  .polaroid {
-    width: 32%;
-    background-color: #ffffff;
-    background-image: url(asset_path('textures/natural-paper.png'));
-    figure {
-      margin: 5%;
-      > a {
-        display: block;
-        height: 80%;
-        box-shadow: inset 0px 0px 2rem 0.5rem rgba(#022038,0.75);
-        background-size: cover;
-      }
-      figcaption {
-        font-family: 'Indie Flower', cursive;
-        font-size: 1.75rem;
-        font-weight: bold;
-        line-height: 4.5rem;
-        letter-spacing: 0.18rem;
-        text-align: center;
-        text-shadow: none;
-      }
+  figure {
+    margin: 0;
+    border: 1px solid #e0e0e0;
+    background-color: $white;
+    &.tilt-left {
+      box-shadow: -12px 15px 30px -3px #999;
+      @include transform(rotate(-5deg) translateZ(0));
+    }
+    &.tilt-right {
+      box-shadow: 15px 12px 30px -3px #999;
+      @include transform(rotate(5deg) translateZ(0));
+    }
+    a {
+      display: block;
+      margin: 1em 1em 0.3em;
+      height: 80%;
+      background-size: cover;
+      box-shadow: inset 0px 0px 60px 0px #536D83;
+    }
+    figcaption {
+      font-family: 'indie_flowerregular', cursive;
+      font-size: 1.5em;
+      font-weight: bold;
+      letter-spacing: 0.18em;
+      text-align: center;
     }
   }
 }

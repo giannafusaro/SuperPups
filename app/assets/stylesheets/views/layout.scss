@@ -1,28 +1,53 @@
+/////////////////////////////////////////////////////////////////////////////////
+// Application Layout
+/////////////////////////////////////////////////////////////////////////////////
+
 html, body {
-  background: url(asset-path("paper-fibers.png")) repeat;
   width: 100%;
 }
 
 section {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 4.5em 2em;
+  background-color: $off-white;
   text-align: center;
-  &:not(:first-child) {
-    margin: 5em 0;
-  }
+}
+
+figure {
+  margin: 0;
 }
 
 .container {
-  width: 70%;
+  width: 100%;
+  max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/////////////////////////////////////////////////////////////////////////////////
+// Collar Separator
+/////////////////////////////////////////////////////////////////////////////////
 
-h1 { font-size: $h1-font-size; }
-h2 { font-size: $h2-font-size; }
-h3 { font-size: $h3-font-size; }
-
-p {
-  padding: 1em;
+.collar {
+  @include position(absolute, 0px 0px null 0px);
+  height: 110px;
+  text-align: center;
+  background-color: #9d581b;
+  background-image: url(asset_path('textures/dark-leather.png'));
+  border-top: 10px solid rgba(0,0,0,0.25);
+  border-bottom: 10px solid rgba(0,0,0,0.25);
+  box-shadow: 0px 3px 20px 2px #606060;
+  .collar-stitching {
+    @include position(absolute, 10% 0px);
+    border-top: 2px dashed rgba(255,255,255, 0.4);
+    border-bottom: 2px dashed rgba(255,255,255, 0.4);
+  }
+  .collar-logo {
+    @include position(absolute, -60px 0px null 0px);
+    img { width: 200px; }
+  }
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -31,57 +56,60 @@ p {
 
 footer {
   position: relative;
-  @include display(flex);
-  @include justify-content(center);
-  @include align-items(flex-end);
-  height: 400px;
+  height: 390px;
   background-image: url(asset_path('collage-4.jpg'));
-  background-size: auto 100%;
+  background-size: cover;
   &:before {
     content: '';
-    @include position(absolute, 0px 0px 0px 0px);
-    @include linear-gradient(0deg, rgba(#40526b,0.8), rgba(#40526b,1))
+    @include position(absolute, 0px);
+    @include linear-gradient(180deg, rgba(17, 87, 155, 1), rgba(66, 160, 250, 0.6));
+    background-color: rgba(0,0,0, 0.85);
   }
 
-  .footer-content {
+  .content {
     position: relative;
-    z-index: 3;
-    width: 55%;
     margin-left: auto;
     margin-right: auto;
-
-    .footer-links {
-      @include display(flex);
-      @include justify-content(space-around);
-    }
+    width: 60%;
+    z-index: 3;
+    text-align: center;
 
     h3 {
-      color: rgba(255,255,255,0.9);
-      text-shadow: -1px -2px 0px rgba(0,0,0, 0.65);
+      margin: 0.25em 0;
+      font-size: 2.25em;
+      color: rgb(10, 52, 92);
+      text-shadow:
+        0px -1px 0px rgba($black, 0.75),
+        0px 1px 0px rgba($white, 0.25);
+      letter-spacing: 0.08em;
     }
 
     a {
-      color: rgba(255,255,255,0.4);
-      &:hover { color: rgba(255,255,255,0.8); }
+      color: rgba(255,255,255,0.6);
+      &:hover { color: rgba(255,255,255,0.9); }
     }
 
     ul {
-      margin-bottom: 3em;
+      display: inline-block;
+      margin: 2em;
+      padding: 0;
+      vertical-align: top;
       li {
         display: block;
+        padding: 0.25em;
         text-align: center;
       }
     }
 
     hr {
       border: 1px solid rgba(255, 255, 255, 0.1);
-      margin: 0 auto 1.5em;
-      width: 12em;
+      width: 6em;
     }
 
     p {
-      text-align: center;
+      font-size: 1em;
       color: rgba(255,255,255,0.8);
+      text-align: center;
       &:first-of-type {
         margin-bottom: 0;
         padding-bottom: 0;
@@ -90,115 +118,13 @@ footer {
 
     .gianna-codes {
       font-weight: 600;
-      color: rgba(#9B59B6, 0.65);
+      color: rgb(10, 52, 92);
+      text-shadow:
+        0px -1px 0px rgba($black, 0.75),
+        0px 1px 0px rgba($white, 0.25);
       &:hover {
-        color: rgba(#9A12B3, 0.85);
+        color: #D2527F;
       }
     }
   }
 }
-
-
-
-
-
-
-
-// .footer {
-//   position: relative;
-//   z-index: 1;
-//
-//   $base-spacing: 1.5em !default;
-//   $base-accent-color: #477DCA !default;
-//   $medium-screen: em(640) !default;
-//   $large-screen: em(860) !default;
-//
-//   ul {
-//     padding: 0;
-//   }
-//
-//   li {
-//     list-style: none;
-//     line-height: 1.5em;
-//   }
-//
-//   a {
-//     text-decoration: none;
-//   }
-//
-//   $footer-background: desaturate(darken($base-accent-color, 20%), 30%);
-//   $footer-color: white;
-//   $footer-link-color: transparentize($footer-color, 0.6);
-//   $footer-disclaimer-color: transparentize($footer-color, 0.6);
-//
-//   background: $footer-background;
-//   padding: ($base-spacing * 2) $gutter;
-//   width: 100%;
-//
-//   .footer-logo {
-//     margin-bottom: 2em;
-//     text-align: center;
-//
-//     img {
-//       height: 3em;
-//     }
-//   }
-//
-//   .footer-links {
-//     @include clearfix;
-//     margin-bottom: $base-spacing;
-//
-//     @include media($medium-screen) {
-//       @include shift(3);
-//     }
-//   }
-//
-//   ul {
-//     margin-bottom: $base-spacing * 2;
-//
-//     @include media($medium-screen) {
-//       @include span-columns(3);
-//       @include omega(3n);
-//       @include clearfix;
-//     }
-//   }
-//
-//   li {
-//     text-align: center;
-//
-//     @include media($medium-screen) {
-//       text-align: left;
-//     }
-//   }
-//
-//   li a {
-//     color: $footer-link-color;
-//
-//     &:focus,
-//     &:hover {
-//       color: transparentize($footer-color, 0);
-//     }
-//   }
-//
-//   li h3 {
-//     color: $footer-color;
-//     font-size: 1em;
-//     font-weight: 800;
-//     margin-bottom: 0.4em;
-//   }
-//
-//   hr {
-//     border: 1px solid transparentize($footer-disclaimer-color, 0.3);
-//     margin: 0 auto $base-spacing;
-//     width: 12em;
-//   }
-//
-//   p {
-//     color: $footer-disclaimer-color;
-//     font-size: 0.9em;
-//     line-height: 1.5em;
-//     margin: auto;
-//     max-width: 35em;
-//     text-align: center;
-//   }
-// }
