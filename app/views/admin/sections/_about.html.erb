@@ -1,0 +1,16 @@
+<div class="form-group">
+  <%= label_tag :headline, 'header', class: 'control-label' %>
+  <%= text_field_tag "data[header]", @section.data['header'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :headline, 'paragraph1', class: 'control-label' %>
+  <%= text_area_tag "data[paragraph1]", @section.data['paragraph1'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :headline, 'paragraph2', class: 'control-label' %>
+  <%= text_area_tag "data[paragraph2]", @section.data['paragraph2'], class: 'form-control' %>
+</div>
+<div class="form-group">
+  <%= label_tag :headline, 'paragraph3', class: 'control-label' %>
+  <%= text_area_tag "data[paragraph3]", @section.data['paragraph3'], class: 'form-control' %>
+</div>

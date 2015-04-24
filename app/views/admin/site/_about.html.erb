@@ -1,0 +1,5 @@
+<%= @section = Section.find_by_name(:about) %>
+<h1> <%= @section.data['header'] %> </h1>
+<p> <%= @section.data['paragraph1'] %> </p>
+<p> <%= @section.data['paragraph2'] %> </p>
+<p> <%= @section.data['paragraph3'] %> </p>

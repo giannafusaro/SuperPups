@@ -1,6 +1,7 @@
 @import "bourbon";
 @import "neat";
 
+
 // Normalize
 @import "normalize";
 
@@ -15,3 +16,5 @@
 
 // Views
 @import "views/site";
+@import "views/admin/site";
+@import "views/admin/sections";

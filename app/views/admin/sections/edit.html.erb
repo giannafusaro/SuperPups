@@ -1,0 +1,9 @@
+<div class="container">
+  <h2>Edit <%= @section.name.titleize %> Section</h2>
+
+  <%= form_tag admin_update_path(@section.name) do %>
+    <%= render partial: @section.name.gsub('-','_'), formats: [:html] %>
+    <%= submit_tag 'Save Changes', name: 'save', class: 'button button-blue' %>
+    <%= submit_tag 'Preview Changes', name: 'preview', class: 'button button-orange' %>
+  <% end %>
+</div>

@@ -55,4 +55,10 @@ Rails.application.routes.draw do
   #   end
 
   root 'site#index', as: :site
+
+  namespace :admin do
+    get '/' => 'site#index', as: :site
+    get '/edit/:section' => 'sections#edit', as: :section
+    post '/update/:section' => 'sections#update', as: :update
+  end
 end

@@ -1,0 +1,19 @@
+<div class="form-group">
+  <%= label_tag :headline, 'header', class: 'control-label' %>
+  <%= text_field_tag "data[header]", @section.data['header'], class: 'form-control' %>
+</div>
+<% for i in (1..5) %>
+  <hr/>
+  <div class="form-group">
+    <%= label_tag :headline, "customer#{i}_name", class: 'control-label' %>
+    <%= text_field_tag "data[customer#{i}_name]", @section.data["customer#{i}_name"], class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :headline, "customer#{i}_pic", class: 'control-label' %>
+    <%= text_field_tag "data[customer#{i}_pic]", @section.data["customer#{i}_pic"], class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :headline, "customer#{i}_testimonial", class: 'control-label' %>
+    <%= text_area_tag "data[customer#{i}_testimonial]", @section.data["customer#{i}_testimonial"], class: 'form-control' %>
+  </div>
+<% end %>
