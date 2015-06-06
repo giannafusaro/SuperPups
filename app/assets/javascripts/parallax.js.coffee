@@ -85,4 +85,5 @@ class Parallax
 ###############################
 
 $(document).ready ->
-  new Parallax $('#featured-testimonial'), $('#featured-testimonial-background')
+  if $(window).width() > 768
+    new Parallax $('#featured-testimonial'), $('#featured-testimonial-background')

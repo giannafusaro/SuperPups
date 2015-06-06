@@ -29,7 +29,10 @@
 @mixin responsive-background($tag: '') {
   @include media(new-breakpoint(min-width 2561px)) { background-image: url(asset-path("backgrounds/3200-#{$tag}.jpg")); }
   @include media(new-breakpoint(min-width 1441px max-width 2560px)) { background-image: url(asset-path("backgrounds/2650-#{$tag}.jpg")); }
-  @include media(new-breakpoint(min-width 1px max-width 1440px)) { background-image: url(asset-path("backgrounds/1440-#{$tag}.jpg")); }
+  @include media(new-breakpoint(min-width 749px max-width 1440px)) { background-image: url(asset-path("backgrounds/1440-#{$tag}.jpg")); }
+  @include media(new-breakpoint(min-width 431px max-width 748px)) { background-image: url(asset-path("backgrounds/1440-#{$tag}.jpg")); }
+  @include media(new-breakpoint(min-width 1px max-width 430px)) { background-image: url(asset-path("backgrounds/1200-#{$tag}.jpg")); }
+
 }
 
 // Not really a mixin, just a shortcut

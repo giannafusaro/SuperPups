@@ -14,7 +14,21 @@
   @include transform(translateZ(0));
 }
 
+#featured-testimonial-background-touch {
+  display: none;
+  position: absolute;
+  left: 0; bottom: 0;
+  z-index: -1;
+  @include size(100%);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(asset_path('backgrounds/1440x800-three-bichons-vintage.jpg'));
+  @include transform(translateZ(0));
+}
+
 #featured-testimonial {
+  position: relative;
   @include display(flex);
   @include align-items(center);
   margin-top: 0;

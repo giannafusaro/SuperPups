@@ -2,15 +2,17 @@
 initMap = ->
   # SuperPups location and left-of-center map position
   location = new (google.maps.LatLng)(37.54575, -122.30755)
+  position2 = new (google.maps.LatLng)(37.5300, -122.30755)
   position = new (google.maps.LatLng)(37.549953, -122.2668106174469)
 
+  touch =  (if $(window).width() < 787 then true else false)
   # Initialize map in the DOM, passing our settings
   map = new google.maps.Map(document.getElementById('google-map'),
-    center: position
+    center: (if touch then position2 else position)
     zoom: 13
     mapTypeId: google.maps.MapTypeId.ROADMAP
     scrollwheel: false
-    draggable: true
+    draggable: !touch
     disableDefaultUI: true
   )
 

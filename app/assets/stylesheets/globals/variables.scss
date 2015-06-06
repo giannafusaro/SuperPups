@@ -35,3 +35,26 @@ $google-plus-red: #dd4b39;
 // Backgrounds
 $paper-background: url(asset-path("textures/paper-fibers.jpg"));
 $white-wall-bg: 'backgrounds/white_wall';
+
+
+
+// Responsive breakpoints
+$mobile-tiny: new-breakpoint(max-width 310px 4);
+$multi-column: new-breakpoint(min-width 480px);
+$stack-column: new-breakpoint(max-width 1023px);
+
+$single-column: new-breakpoint(max-width 479px);
+$double-column: new-breakpoint(min-width 480px max-width 1023px);
+$triple-column: new-breakpoint(min-width 1024px);
+
+$mobile-double-column: new-breakpoint(min-width 480px max-width 767px);
+$desktop-double-column: new-breakpoint(min-width 768px max-width 1024px);
+
+$mobile: new-breakpoint(max-width 767px);
+$not-mobile: new-breakpoint(min-width 768px);
+$tablet: new-breakpoint(min-width 768px max-width 979px);
+$not-desktop: new-breakpoint(max-width 979px);
+$desktop: new-breakpoint(min-width 980px);
+$not-skinned: new-breakpoint(max-width 1224px);
+$skinned: new-breakpoint(min-width 1225px);
+$non-fluid: new-breakpoint(min-width 480px max-width 979px);
