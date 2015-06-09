@@ -3,8 +3,22 @@
 # Init
 ###############################
 
-$(document).ready ->
+touch =  (if $(window).width() < 787 then true else false)
 
+initTouchLayout = ->
+  splash = document.getElementById('jumbotron')
+  services = document.getElementById('services')
+  contact = document.getElementById('contact')
+  featured = document.getElementById('featured-testimonial')
+  
+  $(splash).after services
+  $(services).after featured
+  $(featured).after contact
+
+
+$(document).ready ->
+  if touch
+    initTouchLayout()
   # Trigger CSS3 Animations
   $('[data-toggle]').on 'click', (event) ->
     target = $(this).data('toggle')

@@ -6,33 +6,52 @@
 /*============================================================================*/
 @media screen and (max-width: 767px) {
 
-  html, body { overflow-x: hidden; }
 
+  html, body {
+    overflow-x: hidden;
+    z-index: -99999;
+  }
+
+  section { margin: 0;}
   body {
     width: 100%;
-    section:first-of-type { padding: 0.5em 2em; }
+    section:first-of-type { padding: 0.5em 0em; }
     section { padding: 8em 0em; }
   }
 
+  #jumbotron {
+    overflow: visible;
+    z-index: 99999;
+  }
   #featured-testimonial-background {
     display: none;
     position: relative;
   }
-  #featured-testimonial-background-touch {
-    display: inline-block;
-  }
+
+  #featured-testimonial-background-touch { display: inline-block; }
 
   h1 {
-    font-size: 3.2em;
+    font-size: 4em;
     line-height: 2em;
   }
-  h2 { font-size: 2em; }
-  #about .collar { height: 90px; }
-  #about .collar .collar-logo { top: -50px; }
-  #about .collar .collar-stitching h2 {
+  #about {
+    padding: 3em 1em;
+
+  }
+
+  h2 { font-size: 2.9em; }
+  .collar {
+    z-index: 10000000000000;
+  }
+  .collar .collar-logo {
+    top: -50px;
+  }
+  #jumbotron .collar .collar-stitching h2 {
       &:first-of-type { text-align: left; }
-      &:last-of-type { text-align: right; }
+      &:last-of-type { text-align: right; margin-right: -12px; }
       margin: 0em;
+      margin-left: auto;
+      margin-right: auto;
       font-size: 1.5em;
       width: 150px;
   }
@@ -40,34 +59,83 @@
   .collar .collar-logo img { width: 150px; }
 
   p {
-    padding: 1em .5em;
-    font-size: 1em;
-    line-height: 1.2em;
-    text-align: center;
+    padding: 1em;
+    text-align: left;
+    text-indent: 1.5em;
+    font-size: 1.15em;
+    line-height: 1.3em;
   }
   #about article {
     display: inline-block;
     margin: 1em 0em;
   }
 
-  #about figure a {
-    height: 70%;
+  #about figure a { height: 70%; }
+  #about figure figcaption {
+    font-size: 1.9em;
+    letter-spacing: normal;
+  }
+  #about article .flex-text {
+    font-size: 1em;
+  }
+  #services ul {
+    margin-top: 1em;
+    z-index: 999999;
   }
   #services li {
-    min-width: 100%;
-    max-width: 100%;
+    min-width: 265px;
+    max-width: 265px;
+    max-height: 110px;
+    min-height: 110px;
     margin: 0;
   }
-  #services li .services-text h3 { text-align: center; font-size: 1.3em; }
-  #services li .services-text p { font-size: 1em; }
+  #services #touch-services {
+    display: inline-block;
+  }
 
-  .container {max-width: 480px; }
+  #services {
+    a { color: #333; }
+    padding: 9em 0 1em;
+  }
+  #services li .services-text h3 {
+    text-align: left;
+    font-size: 1.6em;
+  }
+  #services li .services-text p { display: none; }
 
-  #services .services-phone { font-size: 2.5em; }
+  #services li .services-text icon {
+    min-width: 130px;
+    max-width: 130px;
+  }
+  #services li .services-icon {
+    margin-right: 0;
 
-  #testimonials { padding: 2em 1em;}
+  }
+  #services li .services-icon i {
+    width: 80px;
+    height: 80px;
+    font-size: 3.5em;
+  }
+  #services .collar { display: none; }
+
+  #services .container {
+    max-width: 300px;
+    z-index: 9999999;
+  }
+
+  #services .services-phone {
+    font-size: 2.7em;
+    white-space: nowrap;
+  }
+
+  #testimonials {
+    padding: 0em 1em;
+  }
+  #testimonials h2 { padding-top: .5em; }
   #featured-testimonial .featured-testimonial-content {
-    width: 80%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     color: #FFF;
     text-shadow: 1px 1px 0px black;
   }
@@ -76,23 +144,23 @@
     width: 100%;
     margin: .5em;
     padding: 0;
-    font-size: 1.5em;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: left;
   }
 
-
   #testimonials .flex-text p, #testimonials li:nth-child(even) .flex-text p {
-    text-align: center;
-    font-size: 1.15em;
-    line-height: 1.3em;
-    padding: 1em 0em;
+    text-align: left;
   }
 
   #featured-testimonial .featured-testimonial-content span {
     display: block;
-    text-align: center;
+    text-align: right;
     color: #fff;
     font-size: 1.5em;
   }
+
+  #testimonials ul { margin: 0;}
 
   #testimonials li {
     display: inline-block;
@@ -110,7 +178,13 @@
     margin-left: auto;
     margin-right: auto;
   }
-
+  #contact {
+    a { color: #FFF; }
+    z-index: 9999999999;
+  }
+  #contact .collar {
+    box-shadow: 0px -15px 95px -5px rgba(0, 0, 0, 0.5);
+  }
   #contact, #contact #google-map {
     height: 800px;
     margin-bottom: 100px;
@@ -126,24 +200,35 @@
 
   #contact address h3 {
     font-size: 3em;
+    white-space: nowrap;
+    text-align: center;
   }
   #contact address hr { margin-top: 1em; }
-  #contact address p { line-height: 1em; }
+  #contact address p {
+    line-height: 1em;
+    text-align: center;
+    text-indent: 0;
+  }
   #contact address .social-icons li a {
     font-size: 3em;
     width: 74px;
     height: 72px;
   }
+  #contact #google-map-controls #directions-control .directions-form .fieldset {
+    padding-left: 0;
+  }
   ul.social-icons { padding: 0; }
 
 
   footer {
-    height: 550px;
+    height: 425px;
     padding: 1em 0em;
   }
 
   footer .content ul {
     margin: 0em;
+    max-width: 60%;
+    min-width: 60%;
   }
 
 }

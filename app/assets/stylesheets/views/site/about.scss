@@ -1,23 +1,10 @@
 
 #about {
+  z-index: -1;
   padding: 11em 0 6em;
   @include retina-textured-background;
 
-  .collar .collar-stitching {
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(center);
-    h2 {
-      margin: 0 3.5em;
-      width: 100px;
-      font-family: 'flagship_slabbold';
-      text-shadow: -1px -1px 0px rgba(0,0,0,0.75);
-      color: #D2B48C;
-      letter-spacing: 0.25em;
-      &:first-of-type { text-align: right; }
-      &:last-of-type { text-align: left; }
-    }
-  }
+
 
 
   h2 { text-shadow: 1px 1px 0px $white; }

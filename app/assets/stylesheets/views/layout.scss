@@ -31,7 +31,16 @@ figure {
 /////////////////////////////////////////////////////////////////////////////////
 
 .collar {
-  @include position(absolute, 0px 0px null 0px);
+  &:first-of-type {
+    @include position(absolute, 0px 0px null 0px);
+
+  }
+  &:last-of-type {
+    margin: -4em 0em;
+    @include position(absolute, null 0px 0px 0px);
+
+  }
+
   height: 110px;
   text-align: center;
   background-color: #9d581b;

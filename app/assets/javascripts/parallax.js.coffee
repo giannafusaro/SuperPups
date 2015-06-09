@@ -31,7 +31,7 @@ class Parallax
   # Update background position
   updatePosition: =>
     value = Math.round((-@lastScroll) / @parallax.speed)        # Distance to move target
-    console.log "value: ", value
+    # console.log "value: ", value
     @translate(@parallax.image, value)              # Perform the translation
     @ticking = false                                # Stop ticking
 

@@ -1,7 +1,8 @@
 #services {
+  #touch-services { display: none; }
   padding: 9em 0 3em;
   @include retina-textured-background;
-  
+
   .collar {
     z-index: 2;
     box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.5);

@@ -1,4 +1,20 @@
 #jumbotron {
+  .collar .collar-stitching {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+    z-index: 1;
+    h2 {
+      margin: 0 3.5em;
+      width: 100px;
+      font-family: 'flagship_slabbold';
+      text-shadow: -1px -1px 0px rgba(0,0,0,0.75);
+      color: #D2B48C;
+      letter-spacing: 0.25em;
+      &:first-of-type { text-align: right; }
+      &:last-of-type { text-align: left; }
+    }
+  }
   position: relative;
   @include display(flex);
   @include justify-content(center);
@@ -6,7 +22,7 @@
   @include responsive-background('collage');
   background-position: center;
   background-size: cover;
-  overflow: hidden;
+  overflow: visible;
   @include transform(translateZ(0));
 
   // Blue Overlay

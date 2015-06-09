@@ -16,6 +16,12 @@
         <h1>SuperPups</h1>
         <h2>San Mateo's Premier Pet Salon</h2>
       </div>
+      <div class="collar">
+        <div class="collar-stitching">
+          <h2>EST.</h2><h2>1996</h2/>
+          <div class="collar-logo"><%= image_tag "super-pups-circle-logo.png" %></div>
+        </div>
+      </div>
     </section>
 
     <%= yield %>
@@ -25,9 +31,9 @@
         <div class="footer-links">
           <ul>
             <li><h3>Follow Us</h3></li>
-            <li><a href="javascript:void(0)">Facebook</a></li>
-            <li><a href="javascript:void(0)">Yelp</a></li>
-            <li><a href="javascript:void(0)">Google+</a></li>
+            <li><a href="https://www.facebook.com/pages/Super-Pups/122012001144458">Facebook</a></li>
+            <li><a href="http://www.yelp.com/biz/super-pups-san-mateo">Yelp</a></li>
+            <li><a href="https://plus.google.com/101933917726912637749/about">Google+</a></li>
           </ul>
           <ul>
             <li><h3>SuperPups</h3></li>
@@ -36,14 +42,9 @@
             <li><a href="javascript:void(0)">Testimonials</a></li>
             <li><a href="javascript:void(0)">Contact Us</a></li>
           </ul>
-          <ul>
-            <li><h3>Legal</h3></li>
-            <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-            <li><a href="javascript:void(0)">Privacy Policy</a></li>
-          </ul>
         </div>
         <div class="footer-details">
-          <p>Copyright &copy; <%= Time.now.year %> SuperPups. All Rights Reserved.</p>
+          <p>Copyright &copy; <%= Time.now.year %> SuperPups. <br/>All Rights Reserved.</p>
         </div>
       </div>
     </footer>
