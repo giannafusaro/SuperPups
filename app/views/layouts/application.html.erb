@@ -3,18 +3,36 @@
   <head>
     <title>SuperPups</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <%= stylesheet_link_tag 'application', media: 'all'%>
     <%= javascript_include_tag 'application'%>
     <script src="//maps.google.com/maps/api/js?sensor=true"></script>
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div id="darkening-layer" data-toggle="#mobile-nav, #darkening-layer"></div>
+    <nav id="mobile-nav">
+      <a id="mobile-nav-btn" data-toggle="#mobile-nav, #darkening-layer">
+        <i class="fa fa-bars"></i>
+      </a>
+      <div class="sections">
+        <%= image_tag "super-pups-circle-logo.png" %>
+        <a href="#services" data-toggle="#mobile-nav, #darkening-layer">Pet Services</a>
+        <a href="#contact" data-toggle="#mobile-nav, #darkening-layer">Contact Us</a>
+        <hr>
+        <a href="#about" data-toggle="#mobile-nav, #darkening-layer">About Us</a>
+        <a href="#testimonials" data-toggle="#mobile-nav, #darkening-layer">Testimonials</a>
+
+      </div>
+    </nav>
+
     <%= yield :parallax %>
 
+    <div class="prepage"></div>
     <section id="jumbotron">
       <div class="jumbotron-content">
         <h1>SuperPups</h1>
-        <h2>San Mateo's Premier Pet Salon</h2>
+        <h2>San Mateo's Premier <span>Pet Salon</span></h2>
       </div>
       <div class="collar">
         <div class="collar-stitching">
@@ -37,10 +55,10 @@
           </ul>
           <ul>
             <li><h3>SuperPups</h3></li>
-            <li><a href="javascript:void(0)">About Us</a></li>
-            <li><a href="javascript:void(0)">Pet Services</a></li>
-            <li><a href="javascript:void(0)">Testimonials</a></li>
-            <li><a href="javascript:void(0)">Contact Us</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Pet Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer-details">

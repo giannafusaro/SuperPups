@@ -1,40 +1,42 @@
-<section id="about">
+<%
+about_data = [
+  {
+    text: 'We are a family owned business with over 30 years expertise in the dog grooming business.
+           We guarantee our work 100%. Susie specializes in Bichons and Poodles as well as Terriers.
+           Joel specializes in Terriers, Labradoodles, Goldendoodles, Goldens, Shihtuzs as well as many other breeds.
+           We understand your wishes that you want your dogs to leave our shop looking like the top dogs that they are.
+           We make that wish possible! Your dogs are as important to us as they are to you.',
+    photo_url: image_url('about/storefront.jpg'),
+    photo_caption: 'Our Storefront',
+    alignment: 'right'
+  },
+  {
+    text: 'Our salon has a wonderful backyard where they can exercise and socialize with other dogs before they are groomed.
+           If you wish, they can also be in their kennel or on the ground in the salon.
+           We try to make their stay with us as pleasant and stress free as possible.
+           We take in to consideration the needs of puppies, older dogs and matted dogs.
+           We do the very best we can with what we are given to work with so that your dogs will have a positive
+           experience and want to return to our salon, Super Pups.',
+    photo_url: image_url('about/dogs-yard.jpg'),
+    photo_caption: 'Puppy Playground',
+    alignment: 'left'
+  },
+  {
+    text: 'Susie has groomed for over 30 years and was trained by Carolyn Smith, master groomer and dog judge.
+           She is very knowledgeble in animal health, nutrition, and skin issues.
+           Only the best organic products from New York ar used in our salon.
+           Joel was trained by Susie and has been grooming for 17 years.
+           He has saved the lives of dogs by identifying potential serious medical issues that their owners were not aware of.',
+    photo_url: image_url('about/joel-and-susie.jpg'),
+    photo_caption: 'Joel & Susie',
+    alignment: 'right'
+  }
+]
+%>
 
-  <%
-  about_data = [
-    {
-      text: 'We are a family owned business with over 30 years expertise in the dog grooming business.
-             We guarantee our work 100%. Susie specializes in Bichons and Poodles as well as Terriers.
-             Joel specializes in Terriers, Labradoodles, Goldendoodles, Goldens, Shihtuzs as well as many other breeds.
-             We understand your wishes that you want your dogs to leave our shop looking like the top dogs that they are.
-             We make that wish possible! Your dogs are as important to us as they are to you.',
-      photo_url: image_url('about/storefront.jpg'),
-      photo_caption: 'Our Storefront',
-      alignment: 'right'
-    },
-    {
-      text: 'Our salon has a wonderful backyard where they can exercise and socialize with other dogs before they are groomed.
-             If you wish, they can also be in their kennel or on the ground in the salon.
-             We try to make their stay with us as pleasant and stress free as possible.
-             We take in to consideration the needs of puppies, older dogs and matted dogs.
-             We do the very best we can with what we are given to work with so that your dogs will have a positive
-             experience and want to return to our salon, Super Pups.',
-      photo_url: image_url('about/dogs-yard.jpg'),
-      photo_caption: 'Puppy Playground',
-      alignment: 'left'
-    },
-    {
-      text: 'Susie has groomed for over 30 years and was trained by Carolyn Smith, master groomer and dog judge.
-             She is very knowledgeble in animal health, nutrition, and skin issues.
-             Only the best organic products from New York ar used in our salon.
-             Joel was trained by Susie and has been grooming for 17 years.
-             He has saved the lives of dogs by identifying potential serious medical issues that their owners were not aware of.',
-      photo_url: image_url('about/joel-and-susie.jpg'),
-      photo_caption: 'Joel & Susie',
-      alignment: 'right'
-    }
-  ]
-  %>
+<section id="about">
+  <a name="about"></a>
+
   <h2>About Us</h2>
   <div class="container">
 

@@ -220,11 +220,20 @@
           display: inline-block;
           width: 100px; height: 98px;
           border-radius: 0.1em;
-          font-size: 4em;
+          font-size: 3.25em;
           color: rgba($white, 0.9);
-          &.facebook { @include social-icon($facebook-blue); }
-          &.yelp { @include social-icon($yelp-red); }
-          &.google-plus { @include social-icon($google-plus-red); }
+          &.facebook {
+            .fa-circle { color: $facebook-blue; }
+            &:hover .fa-circle { color: darken($facebook-blue, 10%); }
+          }
+          &.yelp {
+            .fa-circle { color: $yelp-red; }
+            &:hover .fa-circle { color: darken($yelp-red, 10%); }
+          }
+          &.google-plus {
+            .fa-circle { color: $google-plus-red; }
+            &:hover .fa-circle { color: darken($google-plus-red, 10%); }
+          }
         }
       }
     }

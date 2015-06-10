@@ -4,6 +4,16 @@
 
 html, body {
   width: 100%;
+  overflow-x: hidden;
+}
+
+div.prepage {
+  position: absolute;
+  top: -500px;
+  left: 0;
+  right: 0;
+  height: 500px;
+  background-color: #1062B4;
 }
 
 section {
@@ -24,6 +34,14 @@ figure {
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#mobile-nav {
+  display: none;
+}
+
+#darkening-layer {
+  display: none;
 }
 
 /////////////////////////////////////////////////////////////////////////////////

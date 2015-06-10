@@ -1,20 +1,20 @@
 
-###############################
-# Init
-###############################
 
-touch =  (if $(window).width() < 787 then true else false)
+touch =  (if $(window).width() <= 480 then true else false)
 
 initTouchLayout = ->
   splash = document.getElementById('jumbotron')
   services = document.getElementById('services')
   contact = document.getElementById('contact')
   featured = document.getElementById('featured-testimonial')
-  
+
   $(splash).after services
   $(services).after featured
   $(featured).after contact
 
+###############################
+# Init
+###############################
 
 $(document).ready ->
   if touch
