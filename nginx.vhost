@@ -4,7 +4,7 @@ upstream superpups {
 }
 
 server {
-  server_name www.superpups.biz superpups.biz;
+  server_name www.superpups.biz superpups.biz www.superpups.info superpups.info www.superpups.us superpups.us;
   root /srv/SuperPups/public;
   listen 80;
 
