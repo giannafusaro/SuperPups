@@ -1,0 +1,442 @@
+
+@media screen and (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
+
+  body {
+    width: 100%;
+    section:first-of-type { padding: 0.5em 0em; }
+    section { padding: 8em 0em; }
+  }
+
+  section {
+    margin: 0;
+  }
+
+  p {
+    padding: 1em;
+    text-align: left;
+    text-indent: 1.5em;
+    font-size: 1.15em;
+    line-height: 1.3em;
+  }
+
+  #mobile-nav {
+    display: block;
+    position: fixed;
+    top: 0px; left: 100%;
+    z-index: 15;
+    width: 100%; height: 100%;
+    @include linear-gradient(0deg, rgba(0,0,0,0.45), rgba(13, 51, 87, 0) 100%);
+    background-color: #203549;
+    @include transition(left 0.4s $ease-in-out-back);
+    &.active {
+      left: 40%;
+    }
+
+    #mobile-nav-btn {
+      display: block;
+      position: absolute;
+      top: 0px; right: 0px;
+      z-index: 5;
+      margin-right: 100%;
+      padding-left: 0.05em;
+      background-color: rgba(23, 61, 97, 0.8);
+      font-size: 2.75em;
+      color: #fff;
+      text-align: center;
+      i {
+        margin: 0.45em;
+      }
+    }
+
+    .sections {
+      padding-right: 40%;
+      img {
+        width: 130px;
+        margin: 10% 25% 0;
+      }
+
+      a {
+        display: block;
+        padding: 0.75em 0.5em;
+        margin: 0;
+        font-family: $heading-font-family;
+        font-size: 24pt;
+        color: #fff;
+        text-align: right;
+        margin: 0;
+      }
+      hr {
+        border-color: #3B5B79;
+      }
+    }
+  }
+
+  #darkening-layer {
+    display: block;
+    position: fixed;
+    top: 0px; right: 0px; bottom: 0px; left: 0px;
+    z-index: -5;
+    background-color: #000;
+    opacity: 0;
+    @include transition(opacity 0.3s);
+    &.active {
+      z-index: 10;
+      opacity: 0.75;
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Jumbotron
+  ////////////////////////////////////////////////////////////////
+
+  #jumbotron {
+    padding: 0;
+    z-index: 2;
+    overflow: visible;
+
+    h1 {
+      font-size: 4em;
+      line-height: 2em; }
+    h2 {
+      font-size: 9vw;
+      span { display: block; }
+    }
+
+    .collar {
+      top: 100%;
+      margin: 0;
+
+      .collar-logo {
+        top: -40px;
+        img {
+          width: 150px;
+        }
+      }
+      .collar-stitching h2 {
+        &:first-of-type { text-align: left; }
+        &:last-of-type { text-align: right; }
+        margin: 0em;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.5em;
+        width: 150px;
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Services
+  ////////////////////////////////////////////////////////////////
+
+  #services {
+    padding: 9em 0 1em;
+    .collar {
+      display: none;
+    }
+
+    ul {
+      @include flex-direction(column);
+      margin: 1em auto;
+      max-width: 75%;
+      li {
+        margin: 1em 0;
+        padding: 0;
+        min-width: 100%;
+        min-height: inherit;
+        max-height: inherit;
+
+        .services-icon {
+          margin-right: 1;
+          min-width: 18vw;
+          max-width: 18vw;
+          i {
+            width: 18vw;
+            height: 18vw;
+            font-size: 12vw;
+          }
+        }
+        .services-text {
+          width: 70%;
+          h3 {
+            text-align: left;
+            font-size: 1.6em;
+          }
+          p {
+            display: none;
+          }
+        }
+      }
+    }
+
+    #touch-services {
+      display: inline-block;
+    }
+
+    a {
+      color: #333;
+    }
+
+    .services-cta {
+      font-size: 5vw;
+    }
+    .services-phone {
+      font-size: 12vw;
+      white-space: nowrap;
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Featured Testimonial
+  ////////////////////////////////////////////////////////////////
+
+  #featured-testimonial-background {
+    display: none;
+    position: relative;
+  }
+
+  #featured-testimonial-background-touch {
+    display: inline-block;
+  }
+
+  #featured-testimonial {
+    &:before {
+      content: '';
+      @include position(absolute, 0px);
+      @include linear-gradient(
+        rgba(72, 61, 95, 0.64),
+        rgba(46, 26, 87, 0.25) 30%,
+        rgba(96, 78, 124, 0.53) 80%,
+        rgba(34, 18, 58, 0.61) 100%
+      );
+      opacity: 0.7;
+    }
+
+    .featured-testimonial-content {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      color: #FFF;
+      text-shadow:
+        2px 3px 1px rgba(31, 18, 61,0.5),
+        -1px -1px 0px rgba(31, 18, 61, 0.4),
+        1px 0px 3px rgb(31, 18, 61),
+        1px 2px 0px rgb(0,0,0);
+
+      blockquote {
+        width: 100%;
+        margin: 1em 0 0.5em 0;
+        padding: 0;
+        font-size: 24px;
+        font-weight: bold;
+        text-align: left;
+        text-indent: 0.8em;
+      }
+      span {
+        display: block;
+        text-align: right;
+        color: #fff;
+        font-size: 5.5vw;
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Contact
+  ////////////////////////////////////////////////////////////////
+
+  #contact {
+    margin: 0;
+    padding: 0;
+    height: auto;
+
+    a {
+      color: #FFF;
+    }
+
+    .collar {
+      box-shadow: 0px -15px 95px -5px rgba(0, 0, 0, 0.5);
+    }
+
+    #contact-container.active {
+      #google-map-controls,
+      #drawer-control,
+      #zoom-control {
+        display: none;
+      }
+      #contact-info-drawer {
+        top: auto;
+        padding: 1em 0.5em 0.25em;
+        width: 100%;
+        address {
+          h3 {
+            font-size: 12vw;
+            white-space: nowrap;
+            text-align: center;
+            &:first-of-type {
+              font-size: 13vw;
+            }
+          }
+          h4 {
+            font-size: 8vw;
+          }
+          hr {
+            margin-top: 1em;
+          }
+          p {
+            line-height: 1em;
+            text-align: center;
+            text-indent: 0;
+          }
+          .social-icons {
+            padding: 0;
+            li {
+              margin: 0 0.25em;
+              font-size: 3vw;
+              a {
+                // font-size: 10vw;
+                // width: 74px;
+                // height: 72px;
+              }
+            }
+          }
+        }
+      }
+    }
+    #google-map {
+      height: 850px;
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // About
+  ////////////////////////////////////////////////////////////////
+
+  #about {
+    padding: 2em 1em;
+
+    article {
+      display: inline-block;
+      margin: 1em 0em;
+      .flex-text {
+        font-size: 1em;
+      }
+    }
+
+    figure {
+      a {
+        height: 70%;
+      }
+      figcaption {
+        font-size: 1.9em;
+        letter-spacing: normal;
+      }
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Gallery
+  ////////////////////////////////////////////////////////////////
+
+  #gallery {
+    .aspect-ratio-16x9:before {
+      padding-top: 70%;
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Testimonials
+  ////////////////////////////////////////////////////////////////
+
+  #testimonials {
+    padding: 0em 1em;
+
+    h2 {
+      padding-top: .5em;
+    }
+
+    ul {
+      margin: 0;
+      li {
+        display: inline-block;
+        margin-bottom: 1em;
+        &:first-of-type { margin-top: 2em; }
+        .flex-text p { text-align: left !important; }
+      }
+    }
+
+    .flex-photo, #testimonials li:nth-child(even) .flex-photo {
+      margin: 0em;
+    }
+
+    figure {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  ////////////////////////////////////////////////////////////////
+  // Footer
+  ////////////////////////////////////////////////////////////////
+
+  footer {
+    height: 425px;
+    padding: 1em 0em;
+
+    .content ul {
+      margin: 0em;
+      max-width: 60%;
+      min-width: 60%;
+    }
+  }
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+// 400 - 480 fixes
+////////////////////////////////////////////////////////////////////////////////
+@media (max-width:480px) and (min-width:400px) {
+  #contact-info-drawer address {
+    h3 { font-size: 12vw; }
+    h4 { font-size: 6vw; }
+  }
+
+}
+
+
+/*============================================================================*/
+/* Tablet (480 to 768)                                                        */
+/*============================================================================*/
+// @media (max-width:767px) and (min-width:480px) {
+//   #services {
+//     ul li {
+//       .services-icon i {
+//         width: 14vw;
+//         height: 14vw;
+//         font-size: 10vw;
+//       }
+//       .services-text p {
+//         display: block;
+//         text-indent: 0px;
+//       }
+//     }
+//     .services-cta { font-size: 4vw; }
+//     .services-phone { font-size: 10vw; }
+//   }
+// }
+
+/*============================================================================*/
+/* Desktop (768+)                                                             */
+/*============================================================================*/
+@media screen and (min-width:768px) {
+
+}
+
+/*============================================================================*/
+/* Limit the font size                                                        */
+/*============================================================================*/
+@media (min-width:1440px) {
+
+}
