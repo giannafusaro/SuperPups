@@ -10,8 +10,7 @@ body {
 // Fonts
 ///////////////////////////////////////////
 
-// NOTE:
-//  Family names must be lowercased and underscored in order to match FontSquirrel's generated SVGs
+// NOTE: Family names must be underscored in order to match FontSquirrel's generated SVGs.
 @font-face { @include custom-font('flagship_slabbold', 'FlagshipSlab-Bold-webfont', 'bold'); }
 @font-face { @include custom-font('flagship_slabregular', 'FlagshipSlab-Regular-webfont', 'regular'); }
 @font-face { @include custom-font('aleolightitalic', 'Aleo-LightItalic-webfont', 'regular'); }
@@ -30,8 +29,9 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-h1 { font-size: 7em; }
-h2 { font-size: 2.5em; }
+h1 { font-size: 112px; }
+h2 { font-size: 40px; }
+h3 { font-size: 32px; }
 
 ///////////////////////////////////////////
 // Body Text / Links
@@ -40,7 +40,6 @@ h2 { font-size: 2.5em; }
 p {
   margin: 0 0 0.25em;
   padding: 1em;
-
   font-size: 1.15em;
   line-height: 1.55em;
   letter-spacing: 0.025em;

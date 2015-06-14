@@ -7,7 +7,7 @@ html, body {
   overflow-x: hidden;
 }
 
-div.prepage {
+#before-page {
   position: absolute;
   top: -500px;
   left: 0;
@@ -20,7 +20,7 @@ section {
   position: relative;
   z-index: 1;
   margin: 0;
-  padding: 4.5em 2em;
+  padding: 110px 0px 35px;
   background-color: $off-white;
   text-align: center;
 }
@@ -41,116 +41,65 @@ figure {
 }
 
 #darkening-layer {
-  display: none;
+  display: block;
+  position: fixed;
+  top: 0px; right: 0px; bottom: 0px; left: 0px;
+  z-index: -5;
+  background-color: #000;
+  opacity: 0;
+  @include transition(opacity 0.3s);
+  &.active {
+    z-index: 10;
+    opacity: 0.75;
+  }
 }
 
-/////////////////////////////////////////////////////////////////////////////////
-// Collar Separator
-/////////////////////////////////////////////////////////////////////////////////
+#photo-modal {
+  position: fixed;
+  top: 5vh;
+  bottom: 5vh;
+  left: 5vw;
+  right: 5vw;
+  display: block;
+  z-index: 9999;
+  background-color: #fff;
+  border-radius: 25px;
+  box-shadow: 0px 10px 50px -3px #000;
+}
+
 
 .collar {
-  &:first-of-type {
-    @include position(absolute, 0px 0px null 0px);
-
-  }
-  &:last-of-type {
-    margin: -4em 0em;
-    @include position(absolute, null 0px 0px 0px);
-
-  }
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+  @include position(absolute, 0px 0px null 0px);
 
   height: 110px;
   text-align: center;
   background-color: #9d581b;
-  background-image: url(asset_path('textures/dark-leather.png'));
+  background-image: url(asset_path('backgrounds/dark-leather.png'));
   border-top: 10px solid rgba(0,0,0,0.25);
   border-bottom: 10px solid rgba(0,0,0,0.25);
   box-shadow: 0px 3px 20px 2px #606060;
-  .collar-stitching {
+
+  h2 {
+    display: inline-block;
+    font-family: 'flagship_slabbold';
+    text-shadow: -1px -1px 0px rgba(0,0,0,0.75);
+    color: #D2B48C;
+    line-height: 1.65em;
+    &:first-of-type { margin: 0 4em; }
+    &:last-of-type { margin: 0 3.5em; }
+  }
+
+  .stitching {
     @include position(absolute, 10% 0px);
     border-top: 2px dashed rgba(255,255,255, 0.4);
     border-bottom: 2px dashed rgba(255,255,255, 0.4);
   }
-  .collar-logo {
+
+  .logo {
     @include position(absolute, -60px 0px null 0px);
     img { width: 200px; }
-  }
-}
-
-/////////////////////////////////////////////////////////////////////////////////
-// Footer
-/////////////////////////////////////////////////////////////////////////////////
-
-footer {
-  position: relative;
-  height: 390px;
-  background-image: url(asset_path('collage-4.jpg'));
-  background-size: cover;
-  &:before {
-    content: '';
-    @include position(absolute, 0px);
-    @include linear-gradient(180deg, rgba(17, 87, 155, 1), rgba(66, 160, 250, 0.6));
-    background-color: rgba(0,0,0, 0.85);
-  }
-
-  .content {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 3;
-    text-align: center;
-
-    h3 {
-      margin: 0.25em 0;
-      font-size: 2.25em;
-      color: rgb(10, 52, 92);
-      text-shadow:
-        0px -1px 0px rgba($black, 0.75),
-        0px 1px 0px rgba($white, 0.25);
-      letter-spacing: 0.08em;
-    }
-
-    a {
-      color: rgba(255,255,255,0.6);
-      &:hover { color: rgba(255,255,255,0.9); }
-    }
-
-    ul {
-      display: inline-block;
-      margin: 2em;
-      padding: 0;
-      vertical-align: top;
-      li {
-        display: block;
-        padding: 0.25em;
-        text-align: center;
-      }
-    }
-
-    hr {
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      width: 6em;
-    }
-
-    p {
-      font-size: 1em;
-      color: rgba(255,255,255,0.8);
-      text-align: center;
-      &:first-of-type {
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-    }
-
-    .gianna-codes {
-      font-weight: 600;
-      color: rgb(10, 52, 92);
-      text-shadow:
-        0px -1px 0px rgba($black, 0.75),
-        0px 1px 0px rgba($white, 0.25);
-      &:hover {
-        color: #D2527F;
-      }
-    }
   }
 }

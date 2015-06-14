@@ -74,20 +74,6 @@
     }
   }
 
-  #darkening-layer {
-    display: block;
-    position: fixed;
-    top: 0px; right: 0px; bottom: 0px; left: 0px;
-    z-index: -5;
-    background-color: #000;
-    opacity: 0;
-    @include transition(opacity 0.3s);
-    &.active {
-      z-index: 10;
-      opacity: 0.75;
-    }
-  }
-
   ////////////////////////////////////////////////////////////////
   // Jumbotron
   ////////////////////////////////////////////////////////////////

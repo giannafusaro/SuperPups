@@ -1,0 +1,119 @@
+footer {
+  position: relative;
+  z-index: 50;
+  padding: 35px 0 0.5em;
+  background-image: url(asset_path('collage-4.jpg'));
+  background-size: cover;
+  color: rgba(255,255,255,0.65);
+  &:before {
+    content: '';
+    @include position(absolute, 0px);
+    z-index: 55;
+    @include linear-gradient(180deg, rgba(17, 87, 155, 1), rgba(66, 160, 250, 0.6));
+    background-color: rgba(0,0,0, 0.85);
+  }
+
+  .content {
+    position: relative;
+    z-index: 60;
+    margin: auto;
+    max-width: 1024px;
+    text-align: center;
+
+    ul {
+      display: inline-block;
+      padding: 0;
+      width: 100%;
+      vertical-align: top;
+      white-space: nowrap;
+      li {
+        display: inline-block;
+        position: relative;
+        padding: 0.25em;
+        text-align: center;
+      }
+
+      &.separator li {
+        padding: 0 2vw;
+        vertical-align: middle;
+        text-transform: uppercase;
+        letter-spacing: -0.5vw;
+        text-shadow:
+          0px -1px 0px rgba($black, 0.45),
+          0px 1px 0px rgba($white, 0.55);
+        &:first-of-type, &:last-of-type {
+          font-size: 3.25vw;
+          line-height: 1em;
+          color: #C5DAEF;
+          vertical-align: middle;
+        }
+        &:nth-of-type(2n-2) hr {
+          margin: 0;
+          width: 100%;
+          border: 1px solid #80A5C8;
+          opacity: 0.8;
+        }
+        h3 {
+          margin: 0.25em 0;
+          color: #d4e1ee;
+          letter-spacing: -0.5px;
+        }
+      }
+    }
+
+    .links {
+      @include display(flex);
+      @include align-items(center);
+      @include justify-content(center);
+      margin: 0 0 2vw;
+      overflow: auto;
+      .onsite {
+        @include display(flex);
+        @include align-items(center);
+        @include justify-content(center);
+        margin-right: 5vw;
+        a {
+          color: rgba(255,255,255,0.6);
+          @include transition(color 0.3s);
+          &:hover { color: rgba(255,255,255,0.9); }
+        }
+        ul {
+          margin: 0 2.5vw 0 0vw;
+          width: auto;
+          li { display: block; }
+        }
+      }
+      .social {
+        margin: 0;
+        width: auto;
+        font-size: 3vw;
+        a {
+          display: block;
+          width: 1.75em; height: 1.75em;
+          line-height: 1.75em;
+          border-radius:50%;
+          box-shadow: inset 0px 0px 0px 40px rgba(255,255,255,0.25);
+          padding: 0;
+          color: rgba(255,255,255,0.75);
+          @include transition(all 0.5s);
+          &:hover { box-shadow: inset 0px 0px 0px 2px rgba(255,255,255,0.5); }
+          .fa-circle { color: #4F86BB; }
+        }
+        a.facebook:hover { background-color: $facebook-blue; }
+        a.yelp:hover { background-color: $yelp-red; }
+        a.google-plus:hover { background-color: $google-plus-red; }
+      }
+    }
+
+    .copyright {
+      font-size: 0.85em;
+      a {
+        color: #AC9FEA;
+        &:hover { text-decoration: underline; }
+      }
+      span:first-of-type {
+        margin-right: 2.5vw;
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 #contact {
   position: relative;
   padding: 110px 0 0 0;
-  height: 710px;
+  height: 560px;
 
   .collar {
     z-index: 2;
@@ -84,7 +84,7 @@
           font-size: 1.33em;
           color: #D50F25;
           text-align: center;
-          line-height: .75em;
+          line-height: 0.75em;
         }
       }
       .directions-form {
@@ -246,7 +246,7 @@
   #google-map {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: 450px;
     img {
       max-width: none;
     }

@@ -17,11 +17,8 @@
 
 <section id="contact">
   <a name="contact"></a>
-  <div class="collar">
-    <div class="collar-stitching">
-      <h2>Contact Us</h2>
-    </div>
-  </div>
+  <%= render partial: 'collar', locals: { title: 'Contact Us' } %>
+
 
   <div id="contact-container" class="active">
 
@@ -63,26 +60,6 @@
         <p><%= sanitize contact_data[:address] %></p>
         <p><%= sanitize contact_data[:hours] %></p>
         <h3><%= contact_data[:phone] %></h3>
-        <ul class="social-icons">
-          <li>
-              <%= link_to contact_data[:facebook], class: 'facebook fa-stack', target: '_blank' do %>
-                <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x" alt="SuperPups on Facebook"></i>
-              <% end %>
-          </li>
-          <li>
-            <%= link_to contact_data[:yelp], class: 'yelp fa-stack', target: '_blank' do %>
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-yelp fa-stack-1x" alt="SuperPups on Yelp"></i>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to contact_data[:google_plus], class: 'google-plus fa-stack', target: '_blank' do %>
-              <i class="fa fa-circle fa-stack-2x"></i>
-              <i class="fa fa-google-plus fa-stack-1x" alt="SuperPups on Google+"></i>
-            <% end %>
-          </li>
-        </ul>
       </address>
     </aside>
 

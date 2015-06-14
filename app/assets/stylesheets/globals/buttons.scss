@@ -12,7 +12,7 @@ button, .btn {
   color: $white;
   line-height: 1;
   text-decoration: none;
-  white-space: nowrap;
+  white-space: nowrap; 
   @include appearance(none);
   -webkit-font-smoothing: antialiased;
   cursor: pointer;

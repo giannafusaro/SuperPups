@@ -6,22 +6,6 @@
   }
 %>
 
-<%= content_for :parallax do %>
-  <div id="featured-testimonial-background"></div>
-<% end %>
-
-<section id="featured-testimonial">
-  <div id="featured-testimonial-background-touch"></div>
-  <div class="featured-testimonial-content">
-    <blockquote>
-      <i class="fa fa-quote-left pull-left"></i>
-      <%= featured_testimonial_data[:review] %>
-      <i class="fa fa-quote-right pull-right"></i>
-    </blockquote>
-    <span>- <%= featured_testimonial_data[:reviewer_name] %></span>
-  </div>
-</section>
-
 <%
   testimonial_data = [
     {
@@ -54,9 +38,25 @@
   ]
 %>
 
+<%= content_for :parallax do %>
+  <div id="featured-testimonial-background"></div>
+<% end %>
+
+<section id="featured-testimonial">
+  <div id="featured-testimonial-background-touch"></div>
+  <div class="featured-testimonial-content">
+    <blockquote>
+      <i class="fa fa-quote-left pull-left"></i>
+      <%= featured_testimonial_data[:review] %>
+      <i class="fa fa-quote-right pull-right"></i>
+    </blockquote>
+    <span>- <%= featured_testimonial_data[:reviewer_name] %></span>
+  </div>
+</section>
+
 <section id="testimonials">
   <a name="testimonials"></a>
-  
+
   <h2>Testimonials</h2>
   <div class="container">
     <ul class="testimonials">

@@ -1,0 +1,62 @@
+#jumbotron {
+  position: relative;
+  z-index: 50;
+  @include responsive-background('collage');
+  background-position: center;
+  background-size: cover;
+  @include transform(translateZ(0));
+
+  // Blue Overlay
+  &:before {
+    content: '';
+    @include position(absolute, 0px);
+    @include radial-gradient(
+      rgba($light-blue, 0.3),
+      rgba($dark-blue,1)
+    );
+  }
+
+  // Flexbox
+  .container {
+    @include display(flex);
+    @include justify-content(center);
+    @include align-items(center);
+    position: relative;
+    height: 400px;
+  }
+
+  // Title & Tagline
+  .flex-content {
+    color: #fff;
+    text-shadow: 0px 8px 10px rgba(0,0,0,0.5);
+    h2 {
+      font-family: 'flagship_slabregular';
+    }
+  }
+
+  // 
+  .collar {
+    top: 100%;
+    h2 {
+      letter-spacing: 0.25em;
+    }
+  }
+  // Collar
+  // .collar .stitching {
+  //   @include display(flex);
+  //   @include align-items(center);
+  //   @include justify-content(center);
+  //   z-index: 1;
+  //   h2 {
+  //     margin: 0 3.5em;
+  //     width: 100px;
+  //     font-family: 'flagship_slabbold';
+  //     text-shadow: -1px -1px 0px rgba(0,0,0,0.75);
+  //     color: #D2B48C;
+  //
+  //     &:first-of-type { text-align: right; }
+  //     &:last-of-type { text-align: left; }
+  //   }
+  // }
+
+}

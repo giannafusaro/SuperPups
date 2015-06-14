@@ -1,0 +1,45 @@
+<footer>
+  <div class="content">
+
+
+    <!-- Site Links -->
+    <div class="links">
+      <div class="onsite">
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#gallery">Photo Gallery</a></li>
+          <li><a href="#services">Pet Services</a></li>
+        </ul>
+        <ul>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#about">Site Map</a></li>
+        </ul>
+      </div>
+      <ul class="social">
+        <li>
+          <%= link_to 'https://www.facebook.com/pages/Super-Pups/122012001144458', class: 'facebook', target: '_blank' do %>
+            <i class="fa fa-facebook" alt="SuperPups on Facebook"></i>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to 'http://www.yelp.com/biz/super-pups-san-mateo', class: 'yelp', target: '_blank' do %>
+            <i class="fa fa-yelp" alt="SuperPups on Yelp"></i>
+          <% end %>
+        </li>
+
+        <li>
+          <%= link_to 'https://plus.google.com/101933917726912637749/about', class: 'google-plus', target: '_blank' do %>
+            <i class="fa fa-google-plus" alt="SuperPups on Google+"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <div class="copyright">
+      <span>Site designed by <%= link_to 'gianna.codes', 'http://gianna.codes' %></span>
+      <span>&copy; <%= Time.now.year %> SuperPups.</span>
+      <span>All Rights Reserved.</span>
+    </div>
+  </div>
+</footer>

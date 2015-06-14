@@ -11,13 +11,9 @@
 
 <section id="services">
   <a name="services"></a>
+  <%= render partial: 'collar', locals: { title: 'Pet Services' } %>
 
-  <div class="collar">
-    <div class="collar-stitching">
-      <h2>Pet Services</h2>
-    </div>
-  </div>
-  <h2 id = "touch-services">Pet Services</h2>
+  <h2 id="touch-services">Pet Services</h2>
   <div class="container">
     <ul>
       <% services_data.each do |data| %>
