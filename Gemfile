@@ -26,6 +26,7 @@ gem 'bcrypt', '~> 3.1.7'                # Use ActiveModel has_secure_password
 group :development, :test do
   gem 'spring'                          # See https://github.com/rails/spring
   gem 'byebug'                          # Call 'byebug' anywhere to stop and enter debugging console
+  gem 'quiet_assets'                     # Quiet all the assets calls in server logs
 end
 
 group :production do

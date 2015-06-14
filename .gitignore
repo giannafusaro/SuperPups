@@ -32,4 +32,9 @@ config/secrets/aws.yml
 *.bowerrc
 bower.json
 
-.DS_STORE
+# Finder Cache
+.DS_Store
+
+# RbEnv Settings
+.ruby-version
+.ruby-gemset
