@@ -2,7 +2,8 @@ footer {
   position: relative;
   z-index: 50;
   padding: 35px 0 0.5em;
-  background-image: url(asset_path('collage-4.jpg'));
+  @include responsive-background('collage');
+  background-position: center;
   background-size: cover;
   color: rgba(255,255,255,0.65);
   &:before {
@@ -10,7 +11,7 @@ footer {
     @include position(absolute, 0px);
     z-index: 55;
     @include linear-gradient(180deg, rgba(17, 87, 155, 1), rgba(66, 160, 250, 0.6));
-    background-color: rgba(0,0,0, 0.85);
+    background-color: rgba(0,0,0, 0.80);
   }
 
   .content {
