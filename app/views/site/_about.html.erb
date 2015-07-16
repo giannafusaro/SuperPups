@@ -6,6 +6,7 @@ about_data = [
            Joel specializes in Terriers, Labradoodles, Goldendoodles, Goldens, Shihtuzs as well as many other breeds.
            We understand your wishes that you want your dogs to leave our shop looking like the top dogs that they are.
            We make that wish possible! Your dogs are as important to us as they are to you.',
+    photo_id: 'jswAWVXHfz',
     photo_url: image_url('about/storefront.jpg'),
     photo_caption: 'Our Storefront',
     alignment: 'right'
@@ -17,6 +18,7 @@ about_data = [
            We take in to consideration the needs of puppies, older dogs and matted dogs.
            We do the very best we can with what we are given to work with so that your dogs will have a positive
            experience and want to return to our salon, Super Pups.',
+    photo_id: 'B9ktsDdXTA',
     photo_url: image_url('about/dogs-yard.jpg'),
     photo_caption: 'Puppy Playground',
     alignment: 'left'
@@ -27,6 +29,7 @@ about_data = [
            Only the best organic products from New York ar used in our salon.
            Joel was trained by Susie and has been grooming for 17 years.
            He has saved the lives of dogs by identifying potential serious medical issues that their owners were not aware of.',
+    photo_id: '_zq9B0NG5tlux3lIVSnXuQ',
     photo_url: image_url('about/joel-and-susie.jpg'),
     photo_caption: 'Joel & Susie',
     alignment: 'right'
@@ -47,7 +50,11 @@ about_data = [
         <div class="flex-photo align-<%= data[:alignment] %>">
           <div class="aspect-ratio-1x1">
             <figure class="tilt-<%= data[:alignment] %>">
-              <a style="<%= bg(data[:photo_url]) %>"></a>
+              <a
+                data-id="<%= data[:photo_id] %>"
+                data-toggle="#photo-modal"
+                style="<%= bg(data[:photo_url]) %>"
+              ></a>
               <figcaption><%= data[:photo_caption] %></figcaption>
             </figure>
           </div>

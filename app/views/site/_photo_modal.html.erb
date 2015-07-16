@@ -1,6 +1,12 @@
 <div id="photo-modal">
   <figure>
-    <%= image_tag('http://localhost:3000/assets/gallery/2.jpg') %>
+    <a id="photo-left"><i class="fa fa-chevron-left"></i></a>
+    <a id="photo-right"><i class="fa fa-chevron-right"></i></a>
+
+    <div id="current-photo"></div>
     <figcaption></figcaption>
+
+    <span class="ordinal"></span>
+    <a id="photo-close" data-close="#photo-modal">close <i class="fa fa-times"></i></a>
   </figure>
 </div>
