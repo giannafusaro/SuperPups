@@ -7,10 +7,71 @@ initTouchLayout = ->
   services = document.getElementById('services')
   contact = document.getElementById('contact')
   featured = document.getElementById('featured-testimonial')
-
   $(splash).after services
   $(services).after featured
   $(featured).after contact
+
+showPhoto = (photo) ->
+  figure = $('#photo-modal figure')
+  image = new Image()
+  image.onload = ->
+    figure.find('#current-photo').html(image)
+    figure.find('figcaption').text(photo.alt).css('max-width',$(image).css('width'))
+    figure.find('.ordinal').text("#{photo.num}/#{window.photoList.length}")
+    figure.attr('id', photo.num)
+  image.src = photo.src
+
+# Returns yelp image key  id for a given id
+adjacentPhoto = (direction) ->
+  currentId = parseInt($('#photo-modal figure').attr('id'))
+  nextNum = if direction=='left' then 2 else 0
+  if (nextNum is 2 && currentId==2)
+    # last LHS
+    $('#photo-left').fadeOut()
+  else if (nextNum==0 && currentId==111)
+    # last RHS
+    $('#photo-right').fadeOut()
+  else
+    #both should show
+    $('#photo-left, #photo-right').fadeIn()
+  window.photoObj[window.photoList[currentId-nextNum][1]]
+
+###############################
+# Event Listeners
+###############################
+
+# Left Arrow Button
+$(document).on 'click', '#photo-left', (event) ->
+  showPhoto(adjacentPhoto('left'))
+
+# Right Arrow Button
+$(document).on 'click', '#photo-right', (event) ->
+  showPhoto(adjacentPhoto('right'))
+
+# Capture Arrow Keys, too
+$(document).keydown (event) ->
+  switch event.keyCode
+    when 37 then showPhoto(adjacentPhoto('left'))
+    when 39 then showPhoto(adjacentPhoto('right'))
+    when 27 then $('#photo-modal').removeClass('active')
+
+# Data Toggle Click
+$(document).on 'click', '[data-toggle]', (event) ->
+  if $(this).data('toggle') is '#photo-modal'
+    photo = window.photoObj[$(this).data('id')]
+    showPhoto(photo)
+
+  target = $(this).data('toggle')
+  $(target).toggleClass('active')
+
+# Data Close Only Click
+$(document).on 'click', '[data-close]', (event) ->
+  target = $(this).data('close')
+  $(target).removeClass('active')
+
+$(document).on 'click', '#photo-modal', (event) ->
+  if event.toElement.id == "photo-modal"
+    $(this).removeClass('active')
 
 ###############################
 # Init
@@ -19,7 +80,3 @@ initTouchLayout = ->
 $(document).ready ->
   if touch
     initTouchLayout()
-  # Trigger CSS3 Animations
-  $('[data-toggle]').on 'click', (event) ->
-    target = $(this).data('toggle')
-    $(target).toggleClass('active')
