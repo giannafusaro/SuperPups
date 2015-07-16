@@ -26,13 +26,12 @@
     display: block;
     position: fixed;
     top: 0px; left: 100%;
-    z-index: 15;
+    z-index: 100;
     width: 100%; height: 100%;
-    @include linear-gradient(0deg, rgba(0,0,0,0.45), rgba(13, 51, 87, 0) 100%);
-    background-color: #203549;
+    background-color: rgba(#203549,0.97);
     @include transition(left 0.4s $ease-in-out-back);
     &.active {
-      left: 40%;
+      left: 25%;
     }
 
     #mobile-nav-btn {
@@ -52,7 +51,7 @@
     }
 
     .sections {
-      padding-right: 40%;
+      padding-right: 25%;
       img {
         width: 130px;
         margin: 10% 25% 0;
@@ -327,6 +326,7 @@
   ////////////////////////////////////////////////////////////////
 
   #gallery {
+    display: none;
     .aspect-ratio-16x9:before {
       padding-top: 70%;
     }
@@ -368,14 +368,21 @@
   ////////////////////////////////////////////////////////////////
 
   footer {
-    height: 425px;
+    height: 155px;
     padding: 1em 0em;
-
+    .content .links .onsite {
+      display: none;
+    }
     .content ul {
       margin: 0em;
-      max-width: 60%;
-      min-width: 60%;
+      li a {
+        font-size: 12vw;
+      }
     }
+    .content .copyright span:first-child {
+      display: block;
+    }
+
   }
 }
 
@@ -388,36 +395,20 @@
     h3 { font-size: 12vw; }
     h4 { font-size: 6vw; }
   }
-
 }
-
-
-/*============================================================================*/
-/* Tablet (480 to 768)                                                        */
-/*============================================================================*/
-// @media (max-width:767px) and (min-width:480px) {
-//   #services {
-//     ul li {
-//       .services-icon i {
-//         width: 14vw;
-//         height: 14vw;
-//         font-size: 10vw;
-//       }
-//       .services-text p {
-//         display: block;
-//         text-indent: 0px;
-//       }
-//     }
-//     .services-cta { font-size: 4vw; }
-//     .services-phone { font-size: 10vw; }
-//   }
-// }
 
 /*============================================================================*/
 /* Desktop (768+)                                                             */
 /*============================================================================*/
-@media screen and (min-width:768px) {
-
+@media (max-width:1219px) and (min-width:480px) {
+  #contact {
+    address h3 {
+      font-size: 4.5vw;
+    }
+    address h4 {
+      font-size: 3vw;
+    }
+  }
 }
 
 /*============================================================================*/

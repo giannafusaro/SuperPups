@@ -7,15 +7,6 @@ html, body {
   overflow-x: hidden;
 }
 
-#before-page {
-  position: absolute;
-  top: -500px;
-  left: 0;
-  right: 0;
-  height: 500px;
-  background-color: #1062B4;
-}
-
 section {
   position: relative;
   z-index: 1;
@@ -40,34 +31,6 @@ figure {
   display: none;
 }
 
-#darkening-layer {
-  display: block;
-  position: fixed;
-  top: 0px; right: 0px; bottom: 0px; left: 0px;
-  z-index: -5;
-  background-color: #000;
-  opacity: 0;
-  @include transition(opacity 0.3s);
-  &.active {
-    z-index: 10;
-    opacity: 0.75;
-  }
-}
-
-#photo-modal {
-  position: fixed;
-  top: 5vh;
-  bottom: 5vh;
-  left: 5vw;
-  right: 5vw;
-  display: block;
-  z-index: 9999;
-  background-color: #fff;
-  border-radius: 25px;
-  box-shadow: 0px 10px 50px -3px #000;
-}
-
-
 .collar {
   @include display(flex);
   @include align-items(center);
@@ -88,8 +51,10 @@ figure {
     text-shadow: -1px -1px 0px rgba(0,0,0,0.75);
     color: #D2B48C;
     line-height: 1.65em;
-    &:first-of-type { margin: 0 4em; }
-    &:last-of-type { margin: 0 3.5em; }
+    &.around-badge {
+      &:first-of-type { margin: 0 4em; }
+      &:last-of-type { margin: 0 3.5em; }
+    }
   }
 
   .stitching {

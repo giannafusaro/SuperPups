@@ -10,13 +10,10 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <!-- above page -->
-    <div id="darkening-layer" data-toggle="#mobile-nav, #darkening-layer"></div>
+    <!-- <div id="page-overlay"></div> -->
+    <%= yield :parallax %>
     <%= render 'mobile_nav' %>
     <%= render 'photo_modal' %>
-
-    <!-- below -->
-    <%= yield :parallax %>
 
     <%= yield %>
 
