@@ -1,7 +1,4 @@
 
-
-touch =  (if $(window).width() <= 480 then true else false)
-
 initTouchLayout = ->
   splash = document.getElementById('jumbotron')
   services = document.getElementById('services')
@@ -32,7 +29,7 @@ adjacentPhoto = (direction) ->
     # last RHS
     $('#photo-right').fadeOut()
   else
-    #both should show
+    # both should show
     $('#photo-left, #photo-right').fadeIn()
   window.photoObj[window.photoList[currentId-nextNum][1]]
 
@@ -56,13 +53,13 @@ $(document).keydown (event) ->
     when 27 then $('#photo-modal').removeClass('active')
 
 # Data Toggle Click
-$(document).on 'click', '[data-toggle]', (event) ->
-  if $(this).data('toggle') is '#photo-modal'
-    photo = window.photoObj[$(this).data('id')]
-    showPhoto(photo)
-
-  target = $(this).data('toggle')
-  $(target).toggleClass('active')
+# $(document).on 'click', '[data-toggle]', (event) ->
+#   if $(this).data('toggle') is '#photo-modal'
+#     photo = window.photoObj[$(this).data('id')]
+#     showPhoto(photo)
+#
+#   target = $(this).data('toggle')
+#   $(target).toggleClass('active')
 
 # Data Close Only Click
 $(document).on 'click', '[data-close]', (event) ->
@@ -78,5 +75,11 @@ $(document).on 'click', '#photo-modal', (event) ->
 ###############################
 
 $(document).ready ->
-  if touch
+  # Reorder the page if mobile
+  if $(window).width() <= 480
     initTouchLayout()
+
+  # Trigger CSS3 Animations
+  $('[data-toggle]').on 'click', (event) ->
+    target = $(this).data('toggle')
+    $(target).toggleClass('active')
