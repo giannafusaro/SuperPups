@@ -9,6 +9,7 @@ initTouchLayout = ->
   $(featured).after contact
 
 showPhoto = (photo) ->
+  console.log("photo: ", photo)
   figure = $('#photo-modal figure')
   image = new Image()
   image.onload = ->
@@ -53,13 +54,10 @@ $(document).keydown (event) ->
     when 27 then $('#photo-modal').removeClass('active')
 
 # Data Toggle Click
-# $(document).on 'click', '[data-toggle]', (event) ->
-#   if $(this).data('toggle') is '#photo-modal'
-#     photo = window.photoObj[$(this).data('id')]
-#     showPhoto(photo)
-#
-#   target = $(this).data('toggle')
-#   $(target).toggleClass('active')
+$(document).on 'click', '[data-toggle]', (event) ->
+  if $(this).data('toggle') is '#photo-modal'
+    photo = window.photoObj[$(this).data('id')]
+    showPhoto(photo)
 
 # Data Close Only Click
 $(document).on 'click', '[data-close]', (event) ->
