@@ -3,26 +3,21 @@
   @include retina-textured-background;
 
   ul {
-    @include display(flex);
-    @include align-items(flex-start);
-    @include justify-content(center);
-    @include flex-wrap(wrap);
-    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 0;
     list-style-type: none;
   }
 
   li {
+    flex: 0 0 50%;
     @include clearfix;
-    @include display(flex);
-    @include align-items(center);
-    @include justify-content(center);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 1.25em 0;
-    padding: 1em;
-    min-width: 50%;
-    max-width: 50%;
-    max-height: 192px;
-    min-height: 192px;
     text-align: left;
 
     .services-icon {
