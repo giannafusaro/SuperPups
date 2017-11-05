@@ -12,7 +12,8 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 
-# Don't share secrets
+# Don't share sensitive stuff
+/config/database.yml
 /config/secrets.yml
 
 ## Environment normalisation:
