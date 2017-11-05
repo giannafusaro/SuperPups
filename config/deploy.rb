@@ -6,6 +6,10 @@ set :application, "superpups.biz"
 set :repo_url, "git@github.com:giannafusaro/SuperPups.git"
 set :branch, "master"
 
+# Nginx
+set :nginx_redirect_to_www, true
+set :nginx_server_names, %w(superpups.biz superpups.info superpups.us)
+
 # App Location
 set :user, "deploy"
 set :deploy_to, "/home/#{fetch(:user)}/superpups"
