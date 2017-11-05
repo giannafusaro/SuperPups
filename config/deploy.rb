@@ -2,7 +2,7 @@
 lock "3.10.0"
 
 # Name and Repo
-set :application, "superpups.biz"
+set :application, "superpups"
 set :repo_url, "git@github.com:giannafusaro/SuperPups.git"
 set :branch, "master"
 
